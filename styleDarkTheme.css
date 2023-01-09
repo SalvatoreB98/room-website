@@ -1,0 +1,29 @@
+:root{
+  --alfa: #30333c;
+  --beta: #4e6bb3;
+  --gamma: #e6e0d1;
+  --delta: #eed9b6;
+  --epsilon: #c7cae6;
+  --theta: #22244a;
+}
+body.dark {
+  background-color: var(--theta);
+}
+.dark.side-wrapper, .dark.right-side-wrapper{
+  background-color: var(--theta);
+  color:var(--gamma);
+}
+section.dark.about{
+  color: var(--gamma);
+  font-weight: 300;
+}
+h1.dark{
+  color: var(--gamma);
+}
+nav-bar.dark{
+  /* background-color: var(--theta); */
+  color: var(--gamma);
+}
+nav-bar.dark button{
+  color: var(--gamma);
+}

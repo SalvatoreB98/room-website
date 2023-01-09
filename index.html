@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+Pro:ital,wght@0,200;0,300;1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Salvatore Butera Curriculim vitae Room</title>
+  </head>
+  <body>
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>
+    <div class="page">
+      <nav-bar>
+        <div class="d-flex align-items-center nav-bar-wrapper">
+          <div class="lang-selection">
+            <div>
+              <button id="lang-toggle"> <span id="lang-text"></span> <i id="lang-icon" class="fa fa-language" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <button id="btn-toggle" class="d-flex align-items-center justify-content-end">
+            <div class="p-3 clickable">
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </div>
+            <div class="toggle clickable">
+              <div class="circle" id="circle-toggle"></div>
+            </div>
+            <div class="p-3 clickable">
+              <i class="fa fa-sun-o" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+      </nav-bar>
+      <section class="hero-section">
+      <h1 class="hero-main-title">
+          <translate-text id="name-title">name</translate-text>
+          <p class="description">
+            <translate-text>description</translate-text> <br>
+            <translate-text class="subtitle">CURRICULUM VITAE</translate-text> 
+          </p>
+      </h1>
+      <h1>
+          <div class="mt-5 text-center">
+            <div class="position-relative">
+              <span style="font-size: 1rem;"  class="animated">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+      </h1>
+      </section>
+
+      <div class="side-wrapper position-relative">
+        
+        <section class="about first-move">
+          <div class="block">
+            <div class="about-wrapper">
+              <div>
+                <h3 class="mb-3 pb-3">
+                  <translate-text>introductionTitle</translate-text>
+                </h3>
+                <p class="mt-2">
+                  <translate-text>introduction</translate-text>
+                </p>
+              </div>
+              <div class="profile-img">
+                <img src="/sb.png" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-top: 16em">
+          <h1>
+            <translate-text>experience</translate-text>
+          </h1>
+        </section>
+       
+        <div class="ntt-wrapper position-relative">
+          <section class="about first-experience">
+            <div class="block d-flex align-items-center justify-content-between">
+              <div>
+                <h4>
+                  <translate-text class="little-title">softwareDeveloper</translate-text>
+                </h4>
+                <p class="period">
+                  <div>
+                    <img class="icon-img" src="nttdata-icon.png">
+                    <translate-text class="mt-1 mb-2">ntt</translate-text>
+                  </div>
+                  <translate-text class="mt-1 mb-2">period1</translate-text>
+                </p>
+                <p class="experience-description">
+                  <translate-text>experienceDescription</translate-text>
+                </p>
+              </div>
+              <div class="logo-container position-relative">
+                <img src="nttdata-icon.jpg" alt="">
+                <div class="conjunction text-center">
+                  <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="circle-point"></div>
+                    <div class="line"></div>
+                    <div class="circle-point"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="about second-experience">
+            <div class="block d-flex align-items-center justify-content-between">
+              <div>
+                <h4>
+                  <translate-text class="little-title">fullStackDeveloper</translate-text>
+                </h4>
+                <p class="period">
+                  <div>
+                    <img class="icon-img" src="nttdata-icon.png">
+                    <translate-text class="mt-1 mb-2">ntt</translate-text>
+                  </div>
+                  <translate-text class="mt-1 mb-2">period2</translate-text>
+                </p>
+                <p class="experience-description">
+                  <translate-text>experience2Description</translate-text>
+                </p>
+              </div>
+              <div class="logo-container position-relative">
+                <img src="nttdata-icon.jpg" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="about second-experience">
+            <div class="block d-flex align-items-center justify-content-between">
+              <div>
+                <h4>
+                  <translate-text class="little-title">fullStackDeveloper</translate-text>
+                </h4>
+                <p class="period">
+                  <div>
+                    <img class="icon-img" src="boolean.jpg">
+                    <translate-text class="mt-1 mb-2">boolean</translate-text>
+                  </div>
+                  <translate-text class="mt-1 mb-2">period3</translate-text>
+                </p>
+                <p class="experience-description">
+                  <translate-text>experience3Description</translate-text>
+                </p>
+              </div>
+              <div class="logo-container">
+                <img src="boolean.jpg" alt="">
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="second-move">
+        <div class="right-side-wrapper">
+          <section style="margin-top: 16em">
+            <h1>
+              <translate-text>education</translate-text>
+            </h1>
+          </section>
+          <section class="about first-education">
+              <div class="block d-flex align-items-center justify-content-end">
+                <div>
+                  <h4>
+                    <translate-text class="little-title">BooleanEducation</translate-text>
+                  </h4>
+                  <p class="period">
+                    <div>
+                      <translate-text class="mt-1 mb-2">BooleanPlace1</translate-text>
+                    </div>
+                    <translate-text class="mt-1 mb-2">BooleanPeriodEducation</translate-text>
+                  </p>
+                  <p class="experience-description">
+                    <translate-text>BooleanDesc</translate-text>
+                  </p>
+                </div>
+                <div class="logo-container">
+                  <img src="boolean3.png" alt="">
+                </div>
+              </div>
+          </section>
+          <section class="about second-education">
+            <div class="block d-flex align-items-center justify-content-end">
+              <div>
+                <h4>
+                  <translate-text class="little-title">unicalEducation</translate-text>
+                </h4>
+                <p class="period">
+                  <div>
+                    <translate-text class="mt-1 mb-2">placeUni</translate-text>
+                  </div>
+                  <translate-text class="mt-1 mb-2">periodEducation2</translate-text>
+                </p>
+                <p class="experience-description">
+                  <translate-text>educationDesc2</translate-text>
+                </p>
+              </div>
+              <div class="logo-container">
+                <img src="unical.jpg" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="about second-education">
+            <div class="block d-flex align-items-center justify-content-end">
+              <div>
+                <h4>
+                  <translate-text class="little-title">itis</translate-text>
+                </h4>
+                <p class="period">
+                  <div>
+                    <translate-text class="mt-1 mb-2">itisPlace</translate-text>
+                  </div>
+                  <translate-text class="mt-1 mb-2">itisPeriod</translate-text>
+                </p>
+                <p class="experience-description">
+                  <translate-text>itisDesc</translate-text>
+                </p>
+              </div>
+              <div class="logo-container">
+                <img src="itis.jpg" alt="">
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer style="padding: 10vh;">
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

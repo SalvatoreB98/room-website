@@ -1,0 +1,23 @@
+{
+  "name": "personal-room-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "host": "vite --host"
+  },
+  "devDependencies": {
+    "lil-gui": "^0.17.0",
+    "three": "^0.148.0",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha1",
+    "events": "^3.3.0",
+    "gsap": "^3.11.4",
+    "moment": "^2.29.4"
+  }
+}
