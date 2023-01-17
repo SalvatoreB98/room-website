@@ -5,12 +5,13 @@
   --delta: #eed9b6;
   --epsilon: #c7cae6;
   --theta: #22244a;
+  --new-black:#04051d;
 }
 body.dark {
   background-color: var(--theta);
 }
 .dark.side-wrapper, .dark.right-side-wrapper{
-  background-color: var(--theta);
+  background-color: var(--new-black);
   color:var(--gamma);
 }
 section.dark.about{
@@ -21,9 +22,20 @@ h1.dark{
   color: var(--gamma);
 }
 nav-bar.dark{
-  /* background-color: var(--theta); */
+  background-color: var(--theta);
   color: var(--gamma);
 }
 nav-bar.dark button{
   color: var(--gamma);
+}
+.dark.profile-img > img{
+  mix-blend-mode: exclusion;
+  filter: sepia(0.7);
+}
+.dark.date{
+  background-color: var(--theta);
+}
+tag-lab.dark{
+  background-color: rgba(151, 151, 215, 0.469);
+  font-weight: normal;
 }

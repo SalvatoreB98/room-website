@@ -19,7 +19,10 @@ export default class Theme extends EventEmitter {
             document.querySelectorAll("h1"),
             document.querySelectorAll("section.about"),
             document.querySelectorAll(".side-wrapper"),
-            document.querySelectorAll(".right-side-wrapper")
+            document.querySelectorAll(".right-side-wrapper"),
+            document.querySelectorAll(".profile-img"),
+            document.querySelectorAll(".date"),
+            document.querySelectorAll("tag-lab")
         );
     }
 

@@ -36,6 +36,13 @@ section.about{
   transition: background-color 0.5s ease-in-out;
 }
 
+
+h2{
+  font-weight: 900;
+  font-size: 2.7rem;
+  letter-spacing: 0.5vw;
+  text-align: center;
+}
 /**  CANVAS */
 
 .experience {
@@ -60,6 +67,7 @@ translate-text{
   display: inline-block;
 }
 nav-bar{
+  z-index: 10;
   position: fixed;
   left: 0;
   right: 0;
@@ -130,12 +138,13 @@ button{
   font-weight: 300;
 }
 h1{
-  font-size: 5rem;
+  font-size: 3.5vw;
   font-weight: 900;
   color: var(--alfa);
+  z-index: 100;
 }
 h1>p{
-  font-size: 3rem;
+  font-size: 2vw;
 }
 h3{
   font-weight: 700
@@ -153,20 +162,20 @@ section.about{
   width: 100%;
   margin: 3em auto 3em 0em;
 }
+.side-wrapper{
+  z-index: 100;
+  border-radius: 0px 100px 100px 0px;
+}
 .side-wrapper, .right-side-wrapper{
-  background-color: var(--gamma);
+  background-color:  var(--gamma);
   width: calc(100vw - 100vw/1.618);
-  border-radius: 3em;
   overflow: hidden;
   transition: background-color 0.2s ease-out;
 }
 
 .right-side-wrapper{
-  background-color: var(--gamma);
-  width: calc(100vw - 100vw/1.618);
-  border-radius: 3em;
-  overflow: hidden;
   margin: 5rem 0 5rem auto;
+  border-radius: 100px 0 0 100px;
 }
 .about-wrapper{
   display: flex;
@@ -249,13 +258,13 @@ tag-lab{
   font-weight: 700;
 }
 .circle-point{
-  background-color: #d8d2c5;
+  background-color: #d8d2c549;
   width: 1.618em;
   height: 1.618em;
   border-radius: 100%;
 }
 .line{
-  background-color: #d7d2c4;
+  background-color: #d7d2c44d;
   width: calc(1rem/1.618);
 }
 /* width */
@@ -266,6 +275,7 @@ tag-lab{
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 10px;
+  background-color: white;
 }
  
 /* Handle */
