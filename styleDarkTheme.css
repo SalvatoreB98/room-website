@@ -1,12 +1,3 @@
-:root{
-  --alfa: #30333c;
-  --beta: #4e6bb3;
-  --gamma: #e6e0d1;
-  --delta: #eed9b6;
-  --epsilon: #c7cae6;
-  --theta: #22244a;
-  --new-black:#04051d;
-}
 body.dark {
   background-color: var(--theta);
 }

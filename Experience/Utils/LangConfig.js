@@ -31,7 +31,9 @@ export const translations = {
         itisDesc: "Studio di vari linguaggi di programmazione come <tag-lab>C</tag-lab>  <tag-lab>C++</tag-lab>  <tag-lab>JAVA</tag-lab>  <tag-lab>SQL</tag-lab>  <tag-lab>Assembly</tag-lab>",
         contacts: "CONTATTAMI",
         emailTo: "Questo form inviera' una mail a ",
-        robot: "Non sono un robot"
+        robot: "Non sono un robot",
+        msgSuccess: "Messaggio inviato con successo!",
+        msgFail: "Impossibile inviare il messaggio. Contattami comunque tramite la mail: <a target='_blank' href='mailto:salvatore.butera1998@gmail.com'>salvatore.butera1998@gmail.com</a>"
     },
     en: {
         name: "SALVATORE <br> BUTERA",
@@ -65,7 +67,10 @@ export const translations = {
         itisDesc: "Basic and advanced knowledge of <tag-lab>C</tag-lab>  <tag-lab>C++</tag-lab>  <tag-lab>JAVA</tag-lab>  <tag-lab>SQL</tag-lab>  <tag-lab>Assembly</tag-lab>",
         contacts: "GET IN TOUCH",
         emailTo: "This form will send an e-mail to",
-        robot: "I'm not a robot"
+        robot: "I'm not a robot",
+        msgSuccess: "Message sent!",
+        msgFail: "Unable to send the message. Please contact me by email <a target='_blank' href='mailto:salvatore.butera1998@gmail.com'>salvatore.butera1998@gmail.com</a>"
+
     }
 }
 {/* <span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> */}

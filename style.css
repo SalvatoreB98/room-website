@@ -10,11 +10,12 @@ p{
 }
 :root{
   --alfa: #30333c;
-  --beta: #4e6bb3;
+  --beta: #1f2143;
   --gamma: #e6e0d1;
   --delta: #eed9b6;
   --epsilon: #c7cae6;
   --theta: #22244a;
+  --new-black:#04051d;
 }
 /** GENERAL */
 html,
@@ -44,7 +45,9 @@ h2{
   text-align: center;
 }
 /**  CANVAS */
-
+section.about.introduction{
+  margin: 8rem 0rem;
+}
 .experience {
   position: fixed;
   width: 100vw;
@@ -73,7 +76,7 @@ nav-bar{
   right: 0;
   top: 0;
   font-size: 1.5rem;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 #lang-text{
   padding: 0.5rem;
@@ -112,7 +115,7 @@ button{
   width: 3.5rem;
   height: 1.6rem;
   background-color: var(--alfa);
-  border-radius: 4em;
+  border-radius: 4rem;
   position: relative;
   transition: all 0.1s ease-in-out;
 }
@@ -156,19 +159,19 @@ h3{
   transition: all 0.1s ease-in;
 }
 section.about{
-  font-size: 1.3em;
+  font-size: 1.3rem;
   color: var(--alfa);
   width: 100%;
-  margin: 3em auto 3em 0em;
+  margin: 3rem auto 3rem 0em;
 }
 .side-wrapper{
   background-color: #efeadd;
   width: calc(100vw - 100vw/1.618);
   overflow: hidden;
   transition: background-color 0.2s ease-out;
-  border-radius: 100px 100px 100px 100px;
-  margin-left: 1.618em;
-  margin-top: 5em;
+  border-radius: 7rem 7rem 7rem 7rem;
+  margin-left: 1.618rem;
+  margin-top: 5rem;
 }
 
 .about-wrapper{
@@ -203,14 +206,14 @@ section.about{
 
 .date{
   padding: 0.25rem;
-  border-radius: 1em;
+  border-radius: 1rem;
   background-color: var(--epsilon);
   margin-right: 1rem;
 }
 tag-lab{
   padding: 0.1rem;
-  border-radius: 1em;
-  padding: 0 0.25em;
+  border-radius: 1rem;
+  padding: 0 0.25rem;
   background-color: var(--delta);
 }
 .block{
@@ -253,30 +256,32 @@ tag-lab{
 }
 .circle-point{
   background-color: #d8d2c549;
-  width: 1.618em;
-  height: 1.618em;
+  width: 1.618rem;
+  height: 1.618rem;
   border-radius: 100%;
 }
 .line{
   background-color: #d7d2c44d;
   width: calc(1rem/1.618);
 }
-#success{
+#success, #fail {
   display: none;
-  min-height: 50vh;
   justify-content: center;
   align-items: center;
 }
+.separator{
+  height: 75vh;
+}
 footer{
   background-color: var(--gamma);
-  padding: 2em;
+  padding: 2rem;
 }
 footer.dark{
   background-color: var(--new-black);
   color: white;
 }
 footer > p{
-  padding: 3em;
+  padding: 3rem;
   max-width: 75%;
   margin: auto;
 }
@@ -285,12 +290,12 @@ footer > p{
 /**FORM */
 input, textarea{
   width: 100%;
-  padding: 1.5em;
-  border-radius: 3em;
+  padding: 1.5rem;
+  border-radius: 3rem;
   margin: 0;
   display: block;
   border: none;
-  margin: 1em 0em;
+  margin: 1rem 0em;
   transition: transform 0.1s ease-in-out;
   background-color: #f4f4ec;
 }
@@ -299,12 +304,12 @@ input.dark, textarea.dark{
   color: white;
 }
 [for="captcha"]{
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 [type="checkbox"]{
   display: inline-block; 
   width: auto;
-  font-size: 2em;
+  font-size: 2rem;
   transform: scale(1.2);
 }
 input:focus, textarea:focus{
@@ -316,10 +321,13 @@ input.dark:focus, textarea.dark:focus{
 }
 [type=submit]{
   background-color: var(--delta);
-  padding: 1em 5em;
+  padding: 1rem 5rem;
   margin: auto;
-  border-radius: 5em;
+  border-radius: 5rem;
   font-weight: bold;
+}
+[disabled]{
+  opacity: 0.5;
 }
 input.dark:-webkit-autofill,
 
@@ -350,7 +358,7 @@ select:-webkit-autofill:focus {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 1em;
+  width: 1rem;
 }
 
 /* Track */
@@ -404,6 +412,12 @@ select:-webkit-autofill:focus {
   h1{
     font-size: 5vh;
   }
+  h2{
+    font-weight: 900;
+    font-size: 2.7rem;
+    letter-spacing: 0.5vw;
+    text-align: center;
+  }
   h1>p{
     font-size: 1.9vh;
   }
@@ -438,10 +452,28 @@ select:-webkit-autofill:focus {
     margin-left: 1rem;
   }
   .side-wrapper{
-    width: calc(100% - 3.2em);
-    margin: 1.6em 1.6em;
+    width: calc(100% - 3.2rem);
+    margin: 1.6rem 1.6rem;
+  }
+  [type="checkbox"]{
+    font-size: 1rem;
+    transform: scale(1);
   }
 }
+
+@media screen and (max-width: 700px) {
+  .side-wrapper{
+    width: calc(100% - 1rem);
+    margin: 0.5rem;
+  }
+  html{
+    font-size: 10px;
+  }
+  .side-wrapper{
+    border-radius: 3rem 3rem 3rem 3rem;
+  }
+}
+
 @media screen and (min-width: 1301px) and (max-width:1920px) {
   html{
     font-size: 80%;
