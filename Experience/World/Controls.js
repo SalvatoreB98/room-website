@@ -16,7 +16,12 @@ export default class Controls {
         this.animatedTag = document.querySelector(".animated");
         GSAP.registerPlugin(ScrollTrigger);
         this.getHTMLElements()
-        window.addEventListener("scroll",(e)=>{this.onScroll(e)})
+        setTimeout(()=>{
+            window.addEventListener("scroll",(e)=>{this.onScroll(e)})
+        }, 1000)
+            
+        
+      
         this.setPath();
     }
     setPath(){
@@ -55,9 +60,7 @@ export default class Controls {
     
     onScroll(e){
         this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-        if(e.clientY > -500){
-            this.animatedTag.style = "opacity:0"
-        }
+        this.animatedTag.style = "opacity:0"
         if(this.firstExperience.getBoundingClientRect().top < this.experience.sizes.height){
             
         }

@@ -39,3 +39,6 @@ tag-lab.dark{
   background-color: rgba(151, 151, 215, 0.469);
   font-weight: normal;
 }
+.animated.dark{
+  color: white;
+}

@@ -22,14 +22,15 @@ export default class Theme extends EventEmitter {
             document.querySelectorAll(".right-side-wrapper"),
             document.querySelectorAll(".profile-img"),
             document.querySelectorAll(".date"),
-            document.querySelectorAll("tag-lab")
+            document.querySelectorAll("tag-lab"),
+            document.querySelectorAll(".animated")
         );
     }
 
     updateNightMode(){
         if(this.theme == "light"){
             document.getElementById("circle-toggle").classList.add(['night'])
-            document.querySelector(".toggle").style = "background-color: #ccaf7c;";
+            document.querySelector(".toggle").style = "background-color: #e6e0d1;";
             this.nightModeHTML(this.theme);
             this.theme = "dark";
             this.emit("switch", "dark")
