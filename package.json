@@ -15,9 +15,11 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "bootstrap": "^5.3.0-alpha1",
     "events": "^3.3.0",
     "gsap": "^3.11.4",
+    "js-captcha": "^1.3.0",
     "moment": "^2.29.4"
   }
 }
