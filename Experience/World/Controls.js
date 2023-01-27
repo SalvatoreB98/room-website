@@ -32,7 +32,7 @@ export default class Controls {
                 },
                 scrollTrigger: {
                     trigger: '.first-move',
-                    markers: false,
+                    markers: true,
                     start: "20px 100%",
                     end: "bottom bottom",
                     scrub: 1.5,
@@ -40,20 +40,6 @@ export default class Controls {
                 }
             }
         )
-        this.timeline.to(this.room.position,{
-            x: ()=>{
-                return -this.sizes.width * 0.0009
-            },
-            scrollTrigger: {
-                trigger: '.second-move',
-                markers: false,
-                start: "20px 100%",
-                end: "bottom bottom",
-                scrub: 1.5,
-                invalidateOnRefresh: true
-            }
-        }
-    )
     }
 
 
