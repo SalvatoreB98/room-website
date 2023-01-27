@@ -291,6 +291,15 @@ input.dark, textarea.dark{
   background-color: var(--theta);
   color: white;
 }
+[for="captcha"]{
+  font-size: 1.2em;
+}
+[type="checkbox"]{
+  display: inline-block; 
+  width: auto;
+  font-size: 2em;
+  transform: scale(1.2);
+}
 input:focus, textarea:focus{
   transform: scale(1.02);
   outline: 5px solid var(--delta);

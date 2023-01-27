@@ -254,8 +254,11 @@
               <input placeholder="Subject" type="text" name="name" id="lastname">
               <textarea placeholder="message" name="message" id="message" cols="30" rows="10"></textarea>
              <div class="text-center mt-5 mb-5">
-              <button type="submit">
-                <script src="jCaptcha.js"></script>
+              <div class="d-flex align-items-center justify-content-center">
+                <input type="checkbox" name="captcha" id="captcha">
+                <label class="p-4" for="captcha"> I'm not a robot </label>
+              </div>
+              <button class="mt-5" type="submit">
                 <translate-text>Send</translate-text>
               </button>
              </div>
