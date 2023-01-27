@@ -261,6 +261,12 @@ tag-lab{
   background-color: #d7d2c44d;
   width: calc(1rem/1.618);
 }
+#success{
+  display: none;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
 footer{
   background-color: var(--gamma);
   padding: 2em;
@@ -286,6 +292,7 @@ input, textarea{
   border: none;
   margin: 1em 0em;
   transition: transform 0.1s ease-in-out;
+  background-color: #f4f4ec;
 }
 input.dark, textarea.dark{
   background-color: var(--theta);
@@ -315,6 +322,7 @@ input.dark:focus, textarea.dark:focus{
   font-weight: bold;
 }
 input.dark:-webkit-autofill,
+
 input.dark:-webkit-autofill:hover, 
 input.dark:-webkit-autofill:focus,
 textarea.dark:-webkit-autofill,
@@ -324,10 +332,21 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(29, 29, 55) inset;
+  -webkit-box-shadow: 0 0 0px 1000px #1d1d37 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #f4f4ec inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 /* width */
 ::-webkit-scrollbar {

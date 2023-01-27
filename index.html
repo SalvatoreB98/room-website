@@ -242,13 +242,13 @@
       <div class="side-wrapper">
         <section>
           <h2 class="mt-5 mb-5"><translate-text>contacts</translate-text></h2>
-          <p class="text-center mt-5 mb-5">
-            <translate-text>emailTo</translate-text>
-            <a target="_blank" href="mailto:salvatore.butera1998@gmail.com">
-              salvatore.butera1998@gmail.com
-            </a>
-          </p>
-          <form>
+          <form id="contact-form">
+              <p class="text-center mt-5 mb-5">
+                <translate-text>emailTo</translate-text>
+                <a target="_blank" href="mailto:salvatore.butera1998@gmail.com">
+                  salvatore.butera1998@gmail.com
+                </a>
+              </p>
               <input placeholder="Name or Company Name" type="text" name="name" id="name">
               <input placeholder="Email" type="email" name="email" id="email">
               <input placeholder="Subject" type="text" name="name" id="lastname">
@@ -263,6 +263,16 @@
               </button>
              </div>
           </form>
+          <div id="success">
+            <div class="text-center">
+              <div class="mt-5 mb-2">
+                <i style="font-size: 5em; color: #6ba365;" class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+              </div>
+              <div class="mb-5">
+                <translate-text">Messaggio inviato con successo!</translate-text>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
       <footer class="mt-5">

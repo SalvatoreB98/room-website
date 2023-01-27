@@ -16,7 +16,14 @@ window.addEventListener("load",()=>{
             message: document.getElementById("message").value
         }
         emailjs.send(serviceID, templateID, params).then(res=>{
-            console.warn(res)
+            console.log(res);
+            if(res.status == 200){
+                console.log("Message sent!");
+                var contactForm = document.getElementById("contact-form");
+                contactForm.remove();
+                var success = document.getElementById("success");
+                success.style.display = "flex"
+            }
         })
     })
 })
