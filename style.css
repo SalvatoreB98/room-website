@@ -423,6 +423,9 @@ select:-webkit-autofill:focus {
     background-color: var(--gamma);
     filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.367));
   }
+  nav-bar.dark{
+    background-color: var(--beta);
+  }
   .profile-img{
     width: 50%;
     height: auto;
