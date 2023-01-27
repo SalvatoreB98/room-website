@@ -28,7 +28,8 @@ export const translations = {
         itis: "Diploma di informatica",
         itisPlace: "Istituto Tecnico Industriale E. Scalfaro - Catanzaro",
         itisPeriod: "<span class=\"date\"><span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> Set 2012 - Lug 2017</span>",
-        itisDesc: "Studio di vari linguaggi di programmazione come <tag-lab>C</tag-lab>  <tag-lab>C++</tag-lab>  <tag-lab>JAVA</tag-lab>  <tag-lab>SQL</tag-lab>  <tag-lab>Assembly</tag-lab>"
+        itisDesc: "Studio di vari linguaggi di programmazione come <tag-lab>C</tag-lab>  <tag-lab>C++</tag-lab>  <tag-lab>JAVA</tag-lab>  <tag-lab>SQL</tag-lab>  <tag-lab>Assembly</tag-lab>",
+        contacts: "CONTATTAMI"
     },
     en: {
         name: "SALVATORE <br> BUTERA",
@@ -59,7 +60,8 @@ export const translations = {
         itis: "High school diploma in Computer Science",
         itisPlace: "Istituto Tecnico Industriale E. Scalfaro - Catanzaro",
         itisPeriod: "<span class=\"date\"><span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> Sep 2012 - Jul 2017</span>",
-        itisDesc: "Basic and advanced knowledge of <tag-lab>C</tag-lab>  <tag-lab>C++</tag-lab>  <tag-lab>JAVA</tag-lab>  <tag-lab>SQL</tag-lab>  <tag-lab>Assembly</tag-lab>"
+        itisDesc: "Basic and advanced knowledge of <tag-lab>C</tag-lab>  <tag-lab>C++</tag-lab>  <tag-lab>JAVA</tag-lab>  <tag-lab>SQL</tag-lab>  <tag-lab>Assembly</tag-lab>",
+        contacts: "GET IN TOUCH"
     }
 }
 {/* <span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> */}

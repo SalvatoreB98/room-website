@@ -261,6 +261,22 @@ tag-lab{
   background-color: #d7d2c44d;
   width: calc(1rem/1.618);
 }
+
+
+
+
+/**FORM */
+input, textarea{
+  width: 100%;
+  padding: 1.5em;
+  border-radius: 3em;
+  margin: 0;
+  display: block;
+  border: none;
+  margin: 1em 0em;
+}
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 1em;
@@ -302,6 +318,9 @@ tag-lab{
 .toggle:active{
   transform: scale(1.2);
 }
+
+
+
 /** MEDIA QUERIES */
 @media screen and (max-width: 900px) {
   section{
