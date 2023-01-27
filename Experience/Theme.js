@@ -23,7 +23,10 @@ export default class Theme extends EventEmitter {
             document.querySelectorAll(".profile-img"),
             document.querySelectorAll(".date"),
             document.querySelectorAll("tag-lab"),
-            document.querySelectorAll(".animated")
+            document.querySelectorAll(".animated"),
+            document.querySelectorAll("footer"),
+            document.querySelectorAll("input"),
+            document.querySelectorAll("textarea")
         );
     }
 

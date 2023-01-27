@@ -241,13 +241,18 @@
       </div>
       <div class="side-wrapper">
         <section>
-          <h2><translate-text>contacts</translate-text></h2>
-          <p class="text-center mt-5 mb-5">Questo form inviera' una mail a <a href="mailto:salvatore.butera1998@gmail.com">salvatore.butera1998@gmail.com</a></p>
+          <h2 class="mt-5 mb-5"><translate-text>contacts</translate-text></h2>
+          <p class="text-center mt-5 mb-5">
+            <translate-text>emailTo</translate-text>
+            <a target="_blank" href="mailto:salvatore.butera1998@gmail.com">
+              salvatore.butera1998@gmail.com
+            </a>
+          </p>
           <form>
               <input placeholder="Name or Company Name" type="text" name="name" id="name">
               <input placeholder="Email" type="email" name="email" id="email">
               <input placeholder="Subject" type="text" name="name" id="lastname">
-              <textarea name="message" id="" cols="30" rows="10"></textarea>
+              <textarea placeholder="Message" name="message" id="" cols="30" rows="10"></textarea>
              <div class="text-center mt-5 mb-5">
               <button type="submit">
                 <translate-text>Send</translate-text>
@@ -256,7 +261,11 @@
           </form>
         </section>
       </div>
-      <footer style="padding: 10vh;">
+      <footer class="mt-5">
+        <p class="text-center">
+          I authorize the processing of personal data contained
+          in my curriculum vitae based on art. 13 GDPR 679/16
+        </p>
       </footer>
     </div>
     <script type="module" src="/main.js"></script>

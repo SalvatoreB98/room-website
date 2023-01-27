@@ -166,8 +166,8 @@ section.about{
   width: calc(100vw - 100vw/1.618);
   overflow: hidden;
   transition: background-color 0.2s ease-out;
-  z-index: 100;
-  border-radius: 0px 100px 100px 0px;
+  border-radius: 100px 100px 100px 100px;
+  margin-left: 1.618em;
   margin-top: 5em;
 }
 
@@ -261,8 +261,19 @@ tag-lab{
   background-color: #d7d2c44d;
   width: calc(1rem/1.618);
 }
-
-
+footer{
+  background-color: var(--gamma);
+  padding: 2em;
+}
+footer.dark{
+  background-color: var(--new-black);
+  color: white;
+}
+footer > p{
+  padding: 3em;
+  max-width: 75%;
+  margin: auto;
+}
 
 
 /**FORM */
@@ -274,6 +285,38 @@ input, textarea{
   display: block;
   border: none;
   margin: 1em 0em;
+  transition: transform 0.1s ease-in-out;
+}
+input.dark, textarea.dark{
+  background-color: var(--theta);
+  color: white;
+}
+input:focus, textarea:focus{
+  transform: scale(1.02);
+  outline: 5px solid var(--delta);
+}
+input.dark:focus, textarea.dark:focus{
+  outline: 5px solid var(--alfa);
+}
+[type=submit]{
+  background-color: var(--delta);
+  padding: 1em 5em;
+  margin: auto;
+  border-radius: 5em;
+  font-weight: bold;
+}
+input.dark:-webkit-autofill,
+input.dark:-webkit-autofill:hover, 
+input.dark:-webkit-autofill:focus,
+textarea.dark:-webkit-autofill,
+textarea.dark:-webkit-autofill:hover,
+textarea.dark:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(29, 29, 55) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 
@@ -364,7 +407,8 @@ input, textarea{
     margin-left: 1rem;
   }
   .side-wrapper{
-    width: 100%;
+    width: calc(100% - 3.2em);
+    margin: 1.6em 1.6em;
   }
 }
 @media screen and (min-width: 1301px) and (max-width:1920px) {
