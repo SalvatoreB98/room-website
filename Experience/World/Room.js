@@ -152,9 +152,9 @@ export default class Room {
             this.scene.children.forEach(obj => {
                 if(obj.name == "floor"){
                     GSAP.to(obj.material.color, {
-                        r:0.78,
-                        g:0.73,
-                        b:0.60
+                        r:0.71,
+                        g:0.64,
+                        b:0.51
                     })
                 }
             })

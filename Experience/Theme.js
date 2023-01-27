@@ -30,7 +30,7 @@ export default class Theme extends EventEmitter {
     updateNightMode(){
         if(this.theme == "light"){
             document.getElementById("circle-toggle").classList.add(['night'])
-            document.querySelector(".toggle").style = "background-color: #e6e0d1;";
+            document.querySelector(".toggle").style = "background-color: #e4dcc4;";
             this.nightModeHTML(this.theme);
             this.theme = "dark";
             this.emit("switch", "dark")
