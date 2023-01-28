@@ -25,6 +25,7 @@ export default class Controls {
         this.setPath();
     }
     setPath(){
+        this.camera.orthographicCamera.zoom = 2.5
        this.timeline = new GSAP.timeline();
        this.timeline.to(this.room.position,{
                 x: ()=>{

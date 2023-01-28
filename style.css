@@ -272,6 +272,17 @@ tag-lab{
 .separator{
   height: 75vh;
 }
+.skill p{
+  font-size: larger;
+}
+.skill-icon{
+  width: 1em;
+  height: auto;
+  margin: 0px 0.6em;
+}
+.skill h4{
+  font-weight: 700;
+}
 footer{
   background-color: var(--gamma);
   padding: 2rem;

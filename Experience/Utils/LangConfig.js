@@ -36,7 +36,12 @@ export const translations = {
         emailTo: "Questo form inviera' una mail a ",
         robot: "Non sono un robot",
         msgSuccess: "Messaggio inviato con successo!",
-        msgFail: "Impossibile inviare il messaggio. Contattami comunque tramite la mail: <a target='_blank' href='mailto:salvatore.butera1998@gmail.com'>salvatore.butera1998@gmail.com</a>"
+        msgFail: "Impossibile inviare il messaggio. Contattami comunque tramite la mail: <a target='_blank' href='mailto:salvatore.butera1998@gmail.com'>salvatore.butera1998@gmail.com</a>",
+        contactsFooter: "Contatti",
+        links: "Link utili",
+        gdpr: "Autorizzo il trattamento dei dati personali contenuti in questa pagina secondo l' art. 13 GDPR 679/16",
+        downloadCv: " Puoi scaricare il mio cv <a target='_blank' href='/sbcvit.pdf' download>qui</a>"
+
     },
     en: {
         name: "SALVATORE <br> BUTERA",
@@ -76,8 +81,11 @@ export const translations = {
         emailTo: "This form will send an e-mail to",
         robot: "I'm not a robot",
         msgSuccess: "Message sent!",
-        msgFail: "Unable to send the message. Please contact me by email <a target='_blank' href='mailto:salvatore.butera1998@gmail.com'>salvatore.butera1998@gmail.com</a>"
-
+        msgFail: "Unable to send the message. Please contact me by email <a target='_blank' href='mailto:salvatore.butera1998@gmail.com'>salvatore.butera1998@gmail.com</a>",
+        contactsFooter: "Contacts",
+        links: "Links",
+        gdpr: "I authorize the processing of personal data contained in my curriculum vitae based on art. 13 GDPR 679/16",
+        downloadCv: "You can download my CV <a href=''>here</a>"
     }
 }
 {/* <span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> */}
