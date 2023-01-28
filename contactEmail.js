@@ -32,6 +32,9 @@ export default function emailService(emailjs){
         var button = document.querySelector("[type=submit]")
         button.addEventListener("click", (e)=>{
             e.preventDefault();
+            document.querySelector("[type=submit").remove();
+            console.log(document.querySelector(".spinner"))
+            document.querySelector(".spinner").style.display = "block";
             var params = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,

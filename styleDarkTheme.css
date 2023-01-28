@@ -22,12 +22,17 @@ nav-bar.dark button{
   mix-blend-mode: exclusion;
   filter: sepia(0.7);
 }
-.dark.date{
+.date.dark{
   background-color: var(--theta);
 }
 tag-lab.dark{
   background-color: rgba(151, 151, 215, 0.469);
   font-weight: normal;
+  color: black;
+}
+tag-lab{
+  color: black;
+  font-weight: 600;
 }
 .animated.dark{
   color: white;

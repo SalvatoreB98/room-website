@@ -275,6 +275,7 @@ tag-lab{
 footer{
   background-color: var(--gamma);
   padding: 2rem;
+  margin-top: 10vh;
 }
 footer.dark{
   background-color: var(--new-black);
@@ -485,6 +486,9 @@ select:-webkit-autofill:focus {
 @media screen and (min-width: 900px) and (max-width:1300px) {
   .logo-container{
     display: none;
+  }
+  html{
+    font-size: 13px;
   }
 }
 @media screen and (max-width: 400px) {
