@@ -47,6 +47,9 @@ export default class Controls {
     onScroll(e){
         this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
         this.animatedTag.style = "opacity:0"
+        setTimeout(()=>{
+            this.animatedTag.style.display = "none"
+        },500)
         if(this.firstExperience.getBoundingClientRect().top < this.experience.sizes.height){
             
         }
