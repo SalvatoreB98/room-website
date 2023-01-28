@@ -279,7 +279,7 @@ footer{
 }
 footer.dark{
   background-color: var(--new-black);
-  color: white;
+  color: var(--epsilon);
 }
 footer > p{
   padding: 3rem;
