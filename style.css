@@ -272,13 +272,21 @@ tag-lab{
 .separator{
   height: 75vh;
 }
+.skill{
+  display: flex;
+  padding: 4em 0px;
+  margin: 2em 0em;
+}
+
 .skill p{
   font-size: larger;
 }
 .skill-icon{
-  width: 1em;
+  width: 5vw ;
   height: auto;
-  margin: 0px 0.6em;
+  height: auto;
+  margin: 2em 2em;
+  border-radius: 100%;
 }
 .skill h4{
   font-weight: 700;

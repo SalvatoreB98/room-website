@@ -71,6 +71,6 @@ export default class Camera {
     }
 
     update() {
-        
+        this.orthographicCamera.updateProjectionMatrix()
     }
 }

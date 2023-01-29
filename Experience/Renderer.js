@@ -20,7 +20,9 @@ export default class Renderer {
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true,
-            alpha: true
+            alpha: true,
+            side: THREE.FrontSide, 
+            shadowSide: THREE.FrontSide
         });
         
         this.renderer.physicallyCorrectLights = true;

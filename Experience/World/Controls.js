@@ -22,25 +22,34 @@ export default class Controls {
             
         
       
-        this.setPath();
+        this.setScrolltrigger();
     }
-    setPath(){
-        this.camera.orthographicCamera.zoom = 2.5
-       this.timeline = new GSAP.timeline();
-       this.timeline.to(this.room.position,{
-                x: ()=>{
-                    return this.sizes.width * 0.0009
-                },
-                scrollTrigger: {
-                    trigger: '.first-move',
-                    markers: true,
-                    start: "20px 100%",
-                    end: "bottom bottom",
-                    scrub: 1.5,
-                    invalidateOnRefresh: true
-                }
+    setScrolltrigger(){
+       ScrollTrigger.matchMedia({            /**DESKTOP */
+            "(min-width: 969px)" : ()=>{
+                this.firstMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".first-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true
+                    }
+                });
+                this.firstMoveTimeline.to(this.camera.orthographicCamera.position,{
+                    x: 0.7,
+                    y: 1.4,
+                    z: 1.5
+                })
+                this.firstMoveTimeline.to(this.camera.orthographicCamera,{
+                    zoom: 2.7
+                })
+            },
+            /**mobile */
+            "(max-width: 969px)" : function(){
+                    console.log("mobile")
             }
-        )
+        })
     }
 
 
@@ -68,6 +77,6 @@ export default class Controls {
     }
 
     update(){
-                               
+        this.camera.update();                            
     }
 }
