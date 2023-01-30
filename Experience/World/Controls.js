@@ -36,13 +36,22 @@ export default class Controls {
                         invalidateOnRefresh: true
                     }
                 });
-                this.firstMoveTimeline.to(this.camera.orthographicCamera.position,{
+                this.firstMoveTimelinePosition = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".first-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true
+                    }
+                });
+                this.firstMoveTimeline.to(this.camera.orthographicCamera,{
+                    zoom: 2.7
+                })
+                this.firstMoveTimelinePosition.to(this.camera.orthographicCamera.position,{
                     x: 0.7,
                     y: 1.4,
                     z: 1.5
-                })
-                this.firstMoveTimeline.to(this.camera.orthographicCamera,{
-                    zoom: 2.7
                 })
             },
             /**mobile */
@@ -72,6 +81,7 @@ export default class Controls {
         this.line =  document.querySelector(".line");
         this.line.style.height = this.nttWrapper.offsetWidth + "px";
     }
+    
     resize(){
 
     }

@@ -14,7 +14,6 @@ export default function emailService(emailjs){
 
         /**Aggiunge un Event listener su tutti gli input che al keyUp va ad eseguire il validator per il form */
         formInputs.forEach(input=>{
-            console.log(input.id)
             document.getElementById(input.id).onkeyup = (e) => {inputChange(e)};
         })
         /** Validator per la checkbox del captcha */
@@ -33,7 +32,6 @@ export default function emailService(emailjs){
         button.addEventListener("click", (e)=>{
             e.preventDefault();
             document.querySelector("[type=submit").remove();
-            console.log(document.querySelector(".spinner"))
             document.querySelector(".spinner").style.display = "block";
             var params = {
                 name: document.getElementById("name").value,
@@ -41,7 +39,6 @@ export default function emailService(emailjs){
                 message: document.getElementById("message").value
             }
             emailjs.send(serviceID, templateID, params).then(res=>{
-                console.log(res);
                 if(res.status == 200){
                     console.log("Message sent!");
                     var contactForm = document.getElementById("contact-form");

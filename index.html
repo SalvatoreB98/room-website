@@ -15,27 +15,29 @@
     <div class="experience">
       <canvas class="experience-canvas"></canvas>
     </div>
-    <div class="page">
-      <nav-bar>
-        <div class="d-flex align-items-center nav-bar-wrapper">
-          <div class="lang-selection">
-            <div>
-              <button id="lang-toggle"> <span id="lang-text"></span> <i id="lang-icon" class="fa fa-language" aria-hidden="true"></i></button>
-            </div>
+    
+    <nav-bar>
+      <div class="d-flex align-items-center nav-bar-wrapper">
+        <div class="lang-selection">
+          <div>
+            <button id="lang-toggle"> <span id="lang-text"></span> <i id="lang-icon" class="fa fa-language" aria-hidden="true"></i></button>
           </div>
-          <button id="btn-toggle" class="d-flex align-items-center justify-content-end">
-            <div class="p-3 clickable">
-              <i class="fa fa-moon-o" aria-hidden="true"></i>
-            </div>
-            <div class="toggle clickable">
-              <div class="circle" id="circle-toggle"></div>
-            </div>
-            <div class="p-3 clickable">
-              <i class="fa fa-sun-o" aria-hidden="true"></i>
-            </div>
-          </button>
         </div>
-      </nav-bar>
+        <button id="btn-toggle" class="d-flex align-items-center justify-content-end">
+          <div class="p-3 clickable">
+            <i class="fa fa-moon-o" aria-hidden="true"></i>
+          </div>
+          <div class="toggle clickable">
+            <div class="circle" id="circle-toggle"></div>
+          </div>
+          <div class="p-3 clickable">
+            <i class="fa fa-sun-o" aria-hidden="true"></i>
+          </div>
+        </button>
+      </div>
+    </nav-bar>
+
+    <div class="page">
       <div class="w-100" style="background-color: #e986545b;">
         <h5 class="p-2 text-center">
           <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  
@@ -82,105 +84,108 @@
       </div>
 
 
-
-      <div class="side-wrapper position-relative first-move">
-        <section style="margin-top: 16em">
-          <h2>
-            <translate-text>experience</translate-text>
-          </h2>
-        </section>
-       
-        <div class="ntt-wrapper position-relative">
-          <section class="about first-experience">
-            <div class="block d-flex align-items-center justify-content-end">
-              <div>
-                <h4>
-                  <translate-text class="little-title">softwareDeveloper</translate-text>
-                </h4>
-                <p class="period">
-                  <div>
-                    <img class="icon-img" src="nttdata-icon.png">
-                    <translate-text class="mt-1 mb-2">ntt</translate-text>
-                  </div>
-                  <div class="mt-1 mb-2">
-                    <span class="date">
-                      <translate-text>period1</translate-text>
-                    </span>
-                    <translate-text>mansion1</translate-text>
-                  </div>
-                </p>
-                <p class="experience-description">
-                  <translate-text>experienceDescription</translate-text>
-                </p>
-              </div>
-              <div class="logo-container position-relative">
-                <img src="nttdata-icon.jpg" alt="">
-                <div class="conjunction text-center">
-                  <div class="d-flex flex-column justify-content-center align-items-center">
-                    <div class="circle-point"></div>
-                    <div class="line"></div>
-                    <div class="circle-point"></div>
+      <div class="first-move">
+        <div class="separator"></div>
+        <div class="side-wrapper position-relative">
+          <section style="margin-top: 16em">
+            <h2>
+              <translate-text>experience</translate-text>
+            </h2>
+          </section>
+         
+          <div class="ntt-wrapper position-relative">
+            <section class="about first-experience">
+              <div class="block d-flex align-items-center justify-content-end">
+                <div>
+                  <h4>
+                    <translate-text class="little-title">softwareDeveloper</translate-text>
+                  </h4>
+                  <p class="period">
+                    <div>
+                      <img class="icon-img" src="nttdata-icon.png">
+                      <translate-text class="mt-1 mb-2">ntt</translate-text>
+                    </div>
+                    <div class="mt-1 mb-2">
+                      <span class="date">
+                        <translate-text>period1</translate-text>
+                      </span>
+                      <translate-text>mansion1</translate-text>
+                    </div>
+                  </p>
+                  <p class="experience-description">
+                    <translate-text>experienceDescription</translate-text>
+                  </p>
+                </div>
+                <div class="logo-container position-relative">
+                  <img src="nttdata-icon.jpg" alt="">
+                  <div class="conjunction text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                      <div class="circle-point"></div>
+                      <div class="line"></div>
+                      <div class="circle-point"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section class="about second-experience">
-            <div class="block d-flex align-items-center justify-content-between">
-              <div>
-                <h4>
-                  <translate-text class="little-title">fullStackDeveloper</translate-text>
-                </h4>
-                <p class="period">
-                  <div>
-                    <img class="icon-img" src="nttdata-icon.png">
-                    <translate-text class="mt-1 mb-2">ntt</translate-text>
-                  </div>
-                  <div class="mt-1 mb-2">
-                    <span class="date">
-                      <translate-text>period2</translate-text>
-                    </span>
-                    <translate-text>mansion2</translate-text>
-                  </div>
-                </p>
-                <p class="experience-description">
-                  <translate-text>experience2Description</translate-text>
-                </p>
+            </section>
+            <section class="about second-experience">
+              <div class="block d-flex align-items-center justify-content-between">
+                <div>
+                  <h4>
+                    <translate-text class="little-title">fullStackDeveloper</translate-text>
+                  </h4>
+                  <p class="period">
+                    <div>
+                      <img class="icon-img" src="nttdata-icon.png">
+                      <translate-text class="mt-1 mb-2">ntt</translate-text>
+                    </div>
+                    <div class="mt-1 mb-2">
+                      <span class="date">
+                        <translate-text>period2</translate-text>
+                      </span>
+                      <translate-text>mansion2</translate-text>
+                    </div>
+                  </p>
+                  <p class="experience-description">
+                    <translate-text>experience2Description</translate-text>
+                  </p>
+                </div>
+                <div class="logo-container position-relative">
+                  <img src="nttdata-icon.jpg" alt="">
+                </div>
               </div>
-              <div class="logo-container position-relative">
-                <img src="nttdata-icon.jpg" alt="">
+            </section>
+            <section class="about second-experience">
+              <div class="block d-flex align-items-center justify-content-between">
+                <div>
+                  <h4>
+                    <translate-text class="little-title">fullStackDeveloper</translate-text>
+                  </h4>
+                  <p class="period">
+                    <div>
+                      <img class="icon-img" src="boolean.jpg">
+                      <translate-text class="mt-1 mb-2">boolean</translate-text>
+                    </div>
+                    <div class="mt-1 mb-2">
+                      <span class="date">
+                        <translate-text>period3</translate-text>
+                      </span>
+                      <translate-text>mansion3</translate-text>
+                    </div>
+                  </p>
+                  <p class="experience-description">
+                    <translate-text>experience3Description</translate-text>
+                  </p>
+                </div>
+                <div class="logo-container">
+                  <img src="boolean.jpg" alt="">
+                </div>
               </div>
-            </div>
-          </section>
-          <section class="about second-experience">
-            <div class="block d-flex align-items-center justify-content-between">
-              <div>
-                <h4>
-                  <translate-text class="little-title">fullStackDeveloper</translate-text>
-                </h4>
-                <p class="period">
-                  <div>
-                    <img class="icon-img" src="boolean.jpg">
-                    <translate-text class="mt-1 mb-2">boolean</translate-text>
-                  </div>
-                  <div class="mt-1 mb-2">
-                    <span class="date">
-                      <translate-text>period3</translate-text>
-                    </span>
-                    <translate-text>mansion3</translate-text>
-                  </div>
-                </p>
-                <p class="experience-description">
-                  <translate-text>experience3Description</translate-text>
-                </p>
-              </div>
-              <div class="logo-container">
-                <img src="boolean.jpg" alt="">
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
+    
 
       <div class="">
         <div class="side-wrapper">
@@ -492,6 +497,7 @@
         </p>
       </footer>
     </div>
+    <script src="smoothScroll.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
