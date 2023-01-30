@@ -32,14 +32,35 @@ export default class Renderer {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
-        if(this.isMobile){
+        var gpuName = this.getGPU()
+        console.log(gpuName)
+        if(this.isMobile || gpuName.toLowerCase().includes("intel")){
             this.renderer.setPixelRatio(this.sizes.pixelRatio*0.5); 
         } else {
             this.renderer.setPixelRatio(this.sizes.pixelRatio); 
         }
 
     }
-
+    
+    getUnmaskedInfo(gl) {
+        var unMaskedInfo = {
+          renderer: '',
+          vendor: ''
+        };
+  
+        var dbgRenderInfo = gl.getExtension("WEBGL_debug_renderer_info");
+        if (dbgRenderInfo != null) {
+          unMaskedInfo.renderer = gl.getParameter(dbgRenderInfo.UNMASKED_RENDERER_WEBGL);
+          unMaskedInfo.vendor = gl.getParameter(dbgRenderInfo.UNMASKED_VENDOR_WEBGL);
+        }
+  
+        return unMaskedInfo;
+    }
+    getGPU(){
+        var canvas = document.createElement('canvas');
+        var gl = canvas.getContext("experimental-webgl");
+        return this.getUnmaskedInfo(gl).renderer;
+    }
     resize() {
         //update perspective Camera on Resize
         this.renderer.setSize(this.sizes.width, this.sizes.height);
