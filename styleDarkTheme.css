@@ -37,3 +37,8 @@ tag-lab{
 .animated.dark{
   color: white;
 }
+@media screen and (max-width: 969px) {
+  .dark.side-wrapper{
+    background-color: #04051dec;
+  }
+}

@@ -55,8 +55,34 @@ export default class Controls {
                 })
             },
             /**mobile */
-            "(max-width: 969px)" : function(){
-                    console.log("mobile")
+            "(max-width: 969px)" : () => {
+                this.firstMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".first-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true
+                    }
+                });
+                this.firstMoveTimelinePosition = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".first-move-mobile",
+                        start: "top top",
+                        markers:true,
+                        end: "50px -500px",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true
+                    }
+                });
+                this.firstMoveTimeline.to(this.camera.orthographicCamera,{
+                    zoom: 7
+                })
+                this.firstMoveTimelinePosition.to(this.camera.orthographicCamera.position,{
+                    x: 1.5,
+                    y: 1.4,
+                    z: 1.5
+                })
             }
         })
     }

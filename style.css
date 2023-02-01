@@ -527,3 +527,8 @@ select:-webkit-autofill:focus {
     width: 100%;
   }
 }
+@media screen and (max-width: 969px) {
+  .side-wrapper{
+    background-color: #efeaddec;
+  }
+}
