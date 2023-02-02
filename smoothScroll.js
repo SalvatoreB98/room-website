@@ -11,12 +11,21 @@ if(!isMobile){
     
         var scroll = "translateY(-" + offset + "px) translateZ(0)";
         page.style.transform = scroll;
-    
+        var starts = document.querySelectorAll(".gsap-marker-start");
+        var ends = document.getElementsByClassName("gsap-marker-start");
+        smoothElements(starts);
+        smoothElements(ends);
         callScroll = requestAnimationFrame(smoothScroll);
         
     }
     
     smoothScroll(); 
-
     
+}
+
+function smoothElements(){
+    elements.forEach(start => {
+        var scroll = "translateY(-" + offset + "px) translateZ(0)";
+        start.style.transform = scroll;
+    });
 }
