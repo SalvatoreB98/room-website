@@ -31,19 +31,19 @@ export default class Controls {
                 this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
-                        start: "top top",
-                        end: "bottom bottom",
+                        start: "top center",
+                        end: "bottom center",
                         scrub: 0.6,
                         invalidateOnRefresh: true,
-                        markers:false,
+                        markers:true,
                         onComplete: () => ScrollTrigger.refresh()
                     }
                 });
                 this.firstMoveTimelinePosition = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
-                        start: "top top",
-                        end: "bottom bottom",
+                        start: "top center",
+                        end: "bottom center",
                         scrub: 0.6,
                         invalidateOnRefresh: true,
                         onComplete: () => ScrollTrigger.refresh()
@@ -57,6 +57,7 @@ export default class Controls {
                     y: 1.4,
                     z: 1.5
                 })
+
             },
             /**mobile */
             "(max-width: 969px)" : () => {
@@ -67,7 +68,7 @@ export default class Controls {
                         end: "bottom bottom",
                         scrub: 0.6,
                         invalidateOnRefresh: true,
-                        markers:false
+                        markers:true
                     }
                 });
                 this.firstMoveTimelinePosition = new GSAP.timeline({
@@ -106,7 +107,7 @@ export default class Controls {
                 offset += (window.pageYOffset - offset) * speed;
                 var scroll = "translateY(-" + offset + "px) translateZ(0)";
                 page.style.transform = scroll;
-                callScroll = requestAnimationFrame(smoothScroll);
+                var callScroll = requestAnimationFrame(smoothScroll);
                 var starts = document.querySelectorAll(".gsap-marker-start");
                 var ends = document.querySelectorAll(".gsap-marker-end");
                 ScrollTrigger.refresh();
