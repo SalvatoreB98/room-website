@@ -12,6 +12,7 @@ export default class Controls {
         this.time = this.experience.time;
         this.camera = this.experience.camera;
         this.room = this.experience.world.room.actualRoom;
+        this.floor = this.experience.world.floor;
         this.sizes = this.experience.sizes;
         this.animatedTag = document.querySelector(".animated");
         this.smoothScroll();
@@ -20,7 +21,9 @@ export default class Controls {
         setTimeout(()=>{
             window.addEventListener("scroll",(e)=>{this.onScroll(e)})
         }, 1000)
-            
+        this.circle1 = this.experience.world.floor.circle1;
+        this.circle2 = this.experience.world.floor.circle2;
+        this.circle3 = this.experience.world.floor.circle3;
         
       
         this.setScrolltrigger();
@@ -89,6 +92,31 @@ export default class Controls {
                     y: 1.4,
                     z: 1.5
                 })
+            },
+            all:()=>{
+                this.circleTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".intro-move",
+                        start: "top top",
+                        end: "bottom bottom+500px",
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                        markers:true,
+                        onComplete: () => ScrollTrigger.refresh()
+                    }
+                }).to(this.circle1.scale,{
+                    x:3,
+                    y:3,
+                    z:3
+                }).to(this.circle2.scale,{
+                    x:2,
+                    y:2,
+                    z:2
+                }).to(this.circle3.scale,{
+                    x:2,
+                    y:2,
+                    z:2
+                })
             }
         })
     }
@@ -115,6 +143,7 @@ export default class Controls {
             smoothScroll(); 
         }
     }
+
     onScroll(e){
         this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
         this.animatedTag.style = "opacity:0"

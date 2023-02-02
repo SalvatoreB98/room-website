@@ -31,7 +31,7 @@ export default class Camera {
             this.sizes.frustrum / 2,
             -this.sizes.frustrum / 2,
             -10,
-            50
+            5000
         );
         if(this.sizes.width < this.sizes.height){
             this.orthographicCamera = new THREE.OrthographicCamera(
@@ -40,7 +40,7 @@ export default class Camera {
                 this.sizes.frustrum ,
                 -this.sizes.frustrum,
                 -10,
-                50
+                5000
             );
         }
 
