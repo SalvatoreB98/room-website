@@ -14,6 +14,7 @@ export default class Controls {
         this.room = this.experience.world.room.actualRoom;
         this.sizes = this.experience.sizes;
         this.animatedTag = document.querySelector(".animated");
+        this.smoothScroll();
         GSAP.registerPlugin(ScrollTrigger);
         this.getHTMLElements()
         setTimeout(()=>{
@@ -33,7 +34,9 @@ export default class Controls {
                         start: "top top",
                         end: "bottom bottom",
                         scrub: 0.6,
-                        invalidateOnRefresh: true
+                        invalidateOnRefresh: true,
+                        markers:false,
+                        onComplete: () => ScrollTrigger.refresh()
                     }
                 });
                 this.firstMoveTimelinePosition = new GSAP.timeline({
@@ -42,7 +45,8 @@ export default class Controls {
                         start: "top top",
                         end: "bottom bottom",
                         scrub: 0.6,
-                        invalidateOnRefresh: true
+                        invalidateOnRefresh: true,
+                        onComplete: () => ScrollTrigger.refresh()
                     }
                 });
                 this.firstMoveTimeline.to(this.camera.orthographicCamera,{
@@ -62,7 +66,8 @@ export default class Controls {
                         start: "top top",
                         end: "bottom bottom",
                         scrub: 0.6,
-                        invalidateOnRefresh: true
+                        invalidateOnRefresh: true,
+                        markers:false
                     }
                 });
                 this.firstMoveTimelinePosition = new GSAP.timeline({
@@ -88,7 +93,27 @@ export default class Controls {
     }
 
 
-    
+    smoothScroll(){
+        var isMobile = /Mobi/i.test(window.navigator.userAgent)
+        if(!isMobile){
+            var page = document.getElementsByClassName("page")[0];
+            var height = page.getBoundingClientRect().height - 1;
+            var speed = 0.04;
+            var offset = 10;
+
+            
+            function smoothScroll() {
+                offset += (window.pageYOffset - offset) * speed;
+                var scroll = "translateY(-" + offset + "px) translateZ(0)";
+                page.style.transform = scroll;
+                callScroll = requestAnimationFrame(smoothScroll);
+                var starts = document.querySelectorAll(".gsap-marker-start");
+                var ends = document.querySelectorAll(".gsap-marker-end");
+                ScrollTrigger.refresh();
+            }
+            smoothScroll(); 
+        }
+    }
     onScroll(e){
         this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
         this.animatedTag.style = "opacity:0"
