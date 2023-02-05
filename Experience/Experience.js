@@ -9,6 +9,8 @@ import assets from "./Utils/assets.js";
 import Lang from './Utils/Lang';
 import Animations from './Utils/animations.js'
 import Theme from './Theme';
+import Preloader from "./Preloader.js";
+
 export default class Experience {
     static instance;
     constructor(canvas) {
@@ -28,6 +30,7 @@ export default class Experience {
         this.theme = new Theme();
         this.animations = new Animations();
         this.world = new World();
+        this.preloader = new Preloader();
         this.time.update();
         
         this.time.on("update", () => {

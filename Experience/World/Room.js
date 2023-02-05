@@ -36,13 +36,26 @@ export default class Room {
             this.action2.play();
             this.action3.play();
         }
-        
+        this.getModels();
         this.myTime();
         this.setModel();
         this.onMouseMove();
     }
-
+    getModels(){
+        this.actualRoom.children.forEach(obj => {
+            if(obj.name == "light"){
+               this.ligtGlb = obj;
+            }
+        })
+        this.scene.children.forEach(obj => {
+            if(obj.name == "floor"){
+                this.floor = obj;
+                
+            }
+        });
+    }
     setModel(){
+
         this.actualRoom.children.forEach(child => {
             child.castShadow = true;
             child.receiveShadow = true;
@@ -85,7 +98,10 @@ export default class Room {
                     metalness: 100
                 })
             }
+
+            this.roomChildren[child.name]= child;
         });
+
         const intensity = 0;
         const rectLight = new THREE.PointLight(
             0xeeffff,
@@ -93,18 +109,21 @@ export default class Room {
             2,
             1
         );
+
         rectLight.name = "light"
         rectLight.position.set(1, 1.4, -0.5);
         rectLight.rotation.x = -Math.PI;
         rectLight.rotation.z = Math.PI;
         rectLight.rotation.y = Math.PI/ 4;
         this.actualRoom.add(rectLight);
-        // this.roomChildren["rectLight"] = rectLight;
+        
 
         const rectLightHelper = new RectAreaLightHelper(rectLight);
         this.actualRoom.add(rectLightHelper);
 
         this.scene.add(this.actualRoom);
+        
+        // this.actualRoom.scale.set(0,0,0)
     }
     onMouseMove(){
         window.addEventListener("mousemove", (e)=>{
@@ -125,23 +144,16 @@ export default class Room {
     }   
     switchTheme(theme){
         if(theme == "dark"){
-            this.actualRoom.children.forEach(obj => {
-                if(obj.name == "light"){
-                    setTimeout(()=>{
-                        GSAP.to(obj, {intensity: 0.5})
-                    },500)
-                }
+            setTimeout(()=>{
+                GSAP.to(this.ligtGlb, {intensity: 0.5})
+            },500)
+            
+            GSAP.to(this.floor.material.color, {
+                r:0.71,
+                g:0.64,
+                b:0.51
             })
-            this.scene.children.forEach(obj => {
-                if(obj.name == "floor"){
-                    GSAP.to(obj.material.color, {
-                        r:0.1,
-                        g:0.1,
-                        b:0.1
-                    })
-                    
-                }
-            });
+
             this.experience.world.floor.circle1.material.color = {
                 r:0.09,
                 g:0.09,
@@ -159,20 +171,12 @@ export default class Room {
             }
            
         } else {
-            this.actualRoom.children.forEach(obj => {
-                if(obj.name == "light"){
-                    GSAP.to(obj, {intensity: 0})
-                }
+            GSAP.to(this.ligtGlb, {intensity: 0.5})
+            GSAP.to(this.floor.material.color, {
+                r:0.71,
+                g:0.64,
+                b:0.51
             })
-            this.scene.children.forEach(obj => {
-                if(obj.name == "floor"){
-                    GSAP.to(obj.material.color, {
-                        r:0.71,
-                        g:0.64,
-                        b:0.51
-                    })
-                }
-            });
 
             this.experience.world.floor.circle1.material.color = {
                 r: 0.78/1.5,

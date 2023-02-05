@@ -5,6 +5,7 @@ import Controls from './Controls';
 import Floor from "./Floor.js";
 import { EventEmitter } from 'events';
 import Theme from '../Theme';
+import Preloader from "../Preloader.js";
 export default class World extends EventEmitter {
     static instance;
     constructor(canvas) {
@@ -19,9 +20,10 @@ export default class World extends EventEmitter {
         
         this.resources.on("loaded",()=>{
             this.environment = new Environment();
-            this.room = new Room();
             this.floor = new Floor();
+            this.room = new Room();
             this.controls = new Controls();
+            this.emit("worldready")
         })
         this.theme.on("switch",(theme)=>{
             this.switchTheme(theme);

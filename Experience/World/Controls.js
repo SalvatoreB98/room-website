@@ -38,7 +38,7 @@ export default class Controls {
                         end: "bottom center",
                         scrub: 0.6,
                         invalidateOnRefresh: true,
-                        markers:true,
+                        markers: false,
                         onComplete: () => ScrollTrigger.refresh()
                     }
                 });
@@ -71,15 +71,13 @@ export default class Controls {
                         end: "bottom bottom",
                         scrub: 0.6,
                         invalidateOnRefresh: true,
-                        markers:true
-                    }
+                        markers: false,                    }
                 });
                 this.firstMoveTimelinePosition = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move-mobile",
                         start: "top top",
-                        markers:true,
-                        end: "50px -500px",
+                        markers: false,                        end: "50px -500px",
                         scrub: 0.6,
                         invalidateOnRefresh: true
                     }
@@ -101,21 +99,21 @@ export default class Controls {
                         end: "bottom bottom+500px",
                         scrub: 1,
                         invalidateOnRefresh: true,
-                        markers:true,
+                        markers: false,
                         onComplete: () => ScrollTrigger.refresh()
                     }
                 }).to(this.circle1.scale,{
-                    x:3,
-                    y:3,
-                    z:3
+                    x:1,
+                    y:1,
+                    z:1
                 }).to(this.circle2.scale,{
-                    x:2,
-                    y:2,
-                    z:2
+                    x:0.9,
+                    y:0.9,
+                    z:0.9
                 }).to(this.circle3.scale,{
-                    x:2,
-                    y:2,
-                    z:2
+                    x:0.7,
+                    y:0.7,
+                    z:0.7
                 })
             }
         })
