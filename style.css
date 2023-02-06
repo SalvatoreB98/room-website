@@ -386,7 +386,7 @@ select:-webkit-autofill:focus {
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
 }
  
 /* Handle */

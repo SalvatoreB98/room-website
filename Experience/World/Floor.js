@@ -29,22 +29,17 @@ export default class Floor {
         const geometry = new THREE.CircleGeometry( 5, 64 );
         const material = new THREE.MeshStandardMaterial({color: new THREE.Color(  0.78/1.5, 0.67/1.5, 0.47/1.5)})
         const material2 = new THREE.MeshStandardMaterial({color: new THREE.Color( 0.78/1.65, 0.67/1.65, 0.47/1.65)})
-        const material3 = new THREE.MeshStandardMaterial({color: new THREE.Color( 0.78/1.80, 0.67/1.80, 0.47/1.80)})
         this.circle1 = new THREE.Mesh( geometry, material );
         this.circle2 = new THREE.Mesh( geometry, material2 );
-        this.circle3 = new THREE.Mesh( geometry, material3 );
         this.circle1.position.y = -0.39
         this.circle2.position.y = -0.37
-        this.circle3.position.y = -0.36
         this.circle1.scale.set(0,0,0);
         this.circle2.scale.set(0,0,0);
-        this.circle3.scale.set(0,0,0);
-        this.circle1.rotation.x = this.circle2.rotation.x = this.circle3.rotation.x = -Math.PI/2
-        this.circle1.receiveShadow = this.circle2.receiveShadow = this.circle3.receiveShadow = true;
+        this.circle1.rotation.x = this.circle2.rotation.x = -Math.PI/2
+        this.circle1.receiveShadow = this.circle2.receiveShadow = true;
 
         this.scene.add(this.circle1);
         this.scene.add(this.circle2);
-        this.scene.add(this.circle3);
     }
    
     resize() {

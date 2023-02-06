@@ -12,495 +12,502 @@
     <title>Salvatore Butera Curriculim vitae Room</title>
   </head>
   <body>
-    <div class="experience">
-      <canvas class="experience-canvas"></canvas>
-    </div>
-    
-    <nav-bar>
-      <div class="d-flex align-items-center nav-bar-wrapper">
-        <div class="lang-selection">
-          <div>
-            <button id="lang-toggle"> <span id="lang-text"></span> <i id="lang-icon" class="fa fa-language" aria-hidden="true"></i></button>
+    <loader>
+      <div class="loader-container">
+        <span class="loader"></span>
+      </div>
+    </loader> 
+    <main>
+      <div class="experience">
+        <canvas class="experience-canvas"></canvas>
+      </div>
+      
+      <nav-bar>
+        <div class="d-flex align-items-center nav-bar-wrapper">
+          <div class="lang-selection">
+            <div>
+              <button id="lang-toggle"> <span id="lang-text"></span> <i id="lang-icon" class="fa fa-language" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <button id="btn-toggle" class="d-flex align-items-center justify-content-end">
+            <div class="p-3 clickable">
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </div>
+            <div class="toggle clickable">
+              <div class="circle" id="circle-toggle"></div>
+            </div>
+            <div class="p-3 clickable">
+              <i class="fa fa-sun-o" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+      </nav-bar>
+  
+      <div class="page">
+        <div class="w-100" style="background-color: #e986545b;">
+          <h5 class="p-2 text-center">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  
+            Work in progress!
+          </h5>
+        </div>
+  
+        <div class="intro-move">
+          <section class="hero-section">
+            <h1 class="hero-main-title">
+                <translate-text id="name-title">name</translate-text>
+                <p class="description">
+                  <translate-text>description</translate-text> <br>
+                  <translate-text class="subtitle">CURRICULUM VITAE</translate-text> 
+                </p>
+            </h1>
+            <h2>
+                <div class="mt-5 text-center">
+                  <div class="position-relative">
+                    <span style="font-size: 1rem;"  class="animated">
+                      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+            </h2>
+            </section>
+      
+            <div class="side-wrapper">
+              <section class="about introduction">
+                <div class="block">
+                  <h2 class="mb-5 pb-5">
+                    <translate-text>introductionTitle</translate-text>
+                  </h2>
+                  <div class="about-wrapper">
+                    <div>
+                        <p class="mt-2">
+                          <translate-text>introduction</translate-text>
+                        </p>
+                    </div>
+                    <div class="profile-img">
+                      <img src="/sb.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+        </div>
+       
+  
+  
+        <div class="first-move">
+          <div class="separator first-move-mobile"></div>
+          <div class="side-wrapper position-relative">
+            <section style="margin-top: 16em">
+              <h2>
+                <translate-text>experience</translate-text>
+              </h2>
+            </section>
+           
+            <div class="ntt-wrapper position-relative">
+              <section class="about first-experience">
+                <div class="block d-flex align-items-center justify-content-end">
+                  <div>
+                    <h4>
+                      <translate-text class="little-title">softwareDeveloper</translate-text>
+                    </h4>
+                    <p class="period">
+                      <div>
+                        <img class="icon-img" src="nttdata-icon.png">
+                        <translate-text class="mt-1 mb-2">ntt</translate-text>
+                      </div>
+                      <div class="mt-1 mb-2">
+                        <span class="date">
+                          <translate-text>period1</translate-text>
+                        </span>
+                        <translate-text>mansion1</translate-text>
+                      </div>
+                    </p>
+                    <p class="experience-description">
+                      <translate-text>experienceDescription</translate-text>
+                    </p>
+                  </div>
+                  <div class="logo-container position-relative">
+                    <img src="nttdata-icon.jpg" alt="">
+                    <div class="conjunction text-center">
+                      <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="circle-point"></div>
+                        <div class="line"></div>
+                        <div class="circle-point"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="about second-experience">
+                <div class="block d-flex align-items-center justify-content-between">
+                  <div>
+                    <h4>
+                      <translate-text class="little-title">fullStackDeveloper</translate-text>
+                    </h4>
+                    <p class="period">
+                      <div>
+                        <img class="icon-img" src="nttdata-icon.png">
+                        <translate-text class="mt-1 mb-2">ntt</translate-text>
+                      </div>
+                      <div class="mt-1 mb-2">
+                        <span class="date">
+                          <translate-text>period2</translate-text>
+                        </span>
+                        <translate-text>mansion2</translate-text>
+                      </div>
+                    </p>
+                    <p class="experience-description">
+                      <translate-text>experience2Description</translate-text>
+                    </p>
+                  </div>
+                  <div class="logo-container position-relative">
+                    <img src="nttdata-icon.jpg" alt="">
+                  </div>
+                </div>
+              </section>
+              <section class="about second-experience">
+                <div class="block d-flex align-items-center justify-content-between">
+                  <div>
+                    <h4>
+                      <translate-text class="little-title">fullStackDeveloper</translate-text>
+                    </h4>
+                    <p class="period">
+                      <div>
+                        <img class="icon-img" src="boolean.jpg">
+                        <translate-text class="mt-1 mb-2">boolean</translate-text>
+                      </div>
+                      <div class="mt-1 mb-2">
+                        <span class="date">
+                          <translate-text>period3</translate-text>
+                        </span>
+                        <translate-text>mansion3</translate-text>
+                      </div>
+                    </p>
+                    <p class="experience-description">
+                      <translate-text>experience3Description</translate-text>
+                    </p>
+                  </div>
+                  <div class="logo-container">
+                    <img src="boolean.jpg" alt="">
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
-        <button id="btn-toggle" class="d-flex align-items-center justify-content-end">
-          <div class="p-3 clickable">
-            <i class="fa fa-moon-o" aria-hidden="true"></i>
-          </div>
-          <div class="toggle clickable">
-            <div class="circle" id="circle-toggle"></div>
-          </div>
-          <div class="p-3 clickable">
-            <i class="fa fa-sun-o" aria-hidden="true"></i>
-          </div>
-        </button>
-      </div>
-    </nav-bar>
-
-    <div class="page">
-      <div class="w-100" style="background-color: #e986545b;">
-        <h5 class="p-2 text-center">
-          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  
-          Work in progress!
-        </h5>
-      </div>
-
-      <div class="intro-move">
-        <section class="hero-section">
-          <h1 class="hero-main-title">
-              <translate-text id="name-title">name</translate-text>
-              <p class="description">
-                <translate-text>description</translate-text> <br>
-                <translate-text class="subtitle">CURRICULUM VITAE</translate-text> 
-              </p>
-          </h1>
-          <h2>
-              <div class="mt-5 text-center">
-                <div class="position-relative">
-                  <span style="font-size: 1rem;"  class="animated">
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                  </span>
-                </div>
-              </div>
-          </h2>
-          </section>
-    
+        
+        <div class="separator second-move-mobile"></div>
+        <div class="education">
           <div class="side-wrapper">
-            <section class="about introduction">
-              <div class="block">
-                <h2 class="mb-5 pb-5">
-                  <translate-text>introductionTitle</translate-text>
-                </h2>
-                <div class="about-wrapper">
+            <section style="margin-top: 16em">
+              <h2>
+                <translate-text>education</translate-text>
+              </h2>
+            </section>
+            <section class="about first-education">
+                <div class="block d-flex align-items-center justify-content-end">
                   <div>
-                      <p class="mt-2">
-                        <translate-text>introduction</translate-text>
-                      </p>
+                    <h4>
+                      <translate-text class="little-title">BooleanEducation</translate-text>
+                    </h4>
+                    <p class="period">
+                      <div>
+                        <translate-text class="mt-1 mb-2">BooleanPlace1</translate-text>
+                      </div>
+                      <translate-text class="mt-1 mb-2">BooleanPeriodEducation</translate-text>
+                    </p>
+                    <p class="experience-description">
+                      <translate-text>BooleanDesc</translate-text>
+                    </p>
                   </div>
-                  <div class="profile-img">
-                    <img src="/sb.png" alt="">
+                  <div class="logo-container">
+                    <img src="boolean3.png" alt="">
                   </div>
                 </div>
-              </div>
             </section>
-          </div>
-      </div>
-     
-
-
-      <div class="first-move">
-        <div class="separator first-move-mobile"></div>
-        <div class="side-wrapper position-relative">
-          <section style="margin-top: 16em">
-            <h2>
-              <translate-text>experience</translate-text>
-            </h2>
-          </section>
-         
-          <div class="ntt-wrapper position-relative">
-            <section class="about first-experience">
+            <section class="about second-education">
               <div class="block d-flex align-items-center justify-content-end">
                 <div>
                   <h4>
-                    <translate-text class="little-title">softwareDeveloper</translate-text>
+                    <translate-text class="little-title">unicalEducation</translate-text>
                   </h4>
                   <p class="period">
                     <div>
-                      <img class="icon-img" src="nttdata-icon.png">
-                      <translate-text class="mt-1 mb-2">ntt</translate-text>
+                      <translate-text class="mt-1 mb-2">placeUni</translate-text>
                     </div>
-                    <div class="mt-1 mb-2">
-                      <span class="date">
-                        <translate-text>period1</translate-text>
-                      </span>
-                      <translate-text>mansion1</translate-text>
-                    </div>
+                    <translate-text class="mt-1 mb-2">periodEducation2</translate-text>
                   </p>
                   <p class="experience-description">
-                    <translate-text>experienceDescription</translate-text>
-                  </p>
-                </div>
-                <div class="logo-container position-relative">
-                  <img src="nttdata-icon.jpg" alt="">
-                  <div class="conjunction text-center">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                      <div class="circle-point"></div>
-                      <div class="line"></div>
-                      <div class="circle-point"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="about second-experience">
-              <div class="block d-flex align-items-center justify-content-between">
-                <div>
-                  <h4>
-                    <translate-text class="little-title">fullStackDeveloper</translate-text>
-                  </h4>
-                  <p class="period">
-                    <div>
-                      <img class="icon-img" src="nttdata-icon.png">
-                      <translate-text class="mt-1 mb-2">ntt</translate-text>
-                    </div>
-                    <div class="mt-1 mb-2">
-                      <span class="date">
-                        <translate-text>period2</translate-text>
-                      </span>
-                      <translate-text>mansion2</translate-text>
-                    </div>
-                  </p>
-                  <p class="experience-description">
-                    <translate-text>experience2Description</translate-text>
-                  </p>
-                </div>
-                <div class="logo-container position-relative">
-                  <img src="nttdata-icon.jpg" alt="">
-                </div>
-              </div>
-            </section>
-            <section class="about second-experience">
-              <div class="block d-flex align-items-center justify-content-between">
-                <div>
-                  <h4>
-                    <translate-text class="little-title">fullStackDeveloper</translate-text>
-                  </h4>
-                  <p class="period">
-                    <div>
-                      <img class="icon-img" src="boolean.jpg">
-                      <translate-text class="mt-1 mb-2">boolean</translate-text>
-                    </div>
-                    <div class="mt-1 mb-2">
-                      <span class="date">
-                        <translate-text>period3</translate-text>
-                      </span>
-                      <translate-text>mansion3</translate-text>
-                    </div>
-                  </p>
-                  <p class="experience-description">
-                    <translate-text>experience3Description</translate-text>
+                    <translate-text>educationDesc2</translate-text>
                   </p>
                 </div>
                 <div class="logo-container">
-                  <img src="boolean.jpg" alt="">
+                  <img src="unical.jpg" alt="">
+                </div>
+              </div>
+            </section>
+            <section class="about second-education">
+              <div class="block d-flex align-items-center justify-content-end">
+                <div>
+                  <h4>
+                    <translate-text class="little-title">itis</translate-text>
+                  </h4>
+                  <p class="period">
+                    <div>
+                      <translate-text class="mt-1 mb-2">itisPlace</translate-text>
+                    </div>
+                    <translate-text class="mt-1 mb-2">itisPeriod</translate-text>
+                  </p>
+                  <p class="experience-description">
+                    <translate-text>itisDesc</translate-text>
+                  </p>
+                </div>
+                <div class="logo-container">
+                  <img src="itis.jpg" alt="">
                 </div>
               </div>
             </section>
           </div>
         </div>
-      </div>
-    
-
-      <div class="education">
+  
         <div class="side-wrapper">
           <section style="margin-top: 16em">
-            <h2>
-              <translate-text>education</translate-text>
+            <h2 class="text-center">
+              SKILLS 
             </h2>
-          </section>
-          <section class="about first-education">
-              <div class="block d-flex align-items-center justify-content-end">
-                <div>
-                  <h4>
-                    <translate-text class="little-title">BooleanEducation</translate-text>
-                  </h4>
-                  <p class="period">
-                    <div>
-                      <translate-text class="mt-1 mb-2">BooleanPlace1</translate-text>
-                    </div>
-                    <translate-text class="mt-1 mb-2">BooleanPeriodEducation</translate-text>
-                  </p>
-                  <p class="experience-description">
-                    <translate-text>BooleanDesc</translate-text>
-                  </p>
-                </div>
-                <div class="logo-container">
-                  <img src="boolean3.png" alt="">
-                </div>
-              </div>
-          </section>
-          <section class="about second-education">
-            <div class="block d-flex align-items-center justify-content-end">
-              <div>
-                <h4>
-                  <translate-text class="little-title">unicalEducation</translate-text>
-                </h4>
-                <p class="period">
-                  <div>
-                    <translate-text class="mt-1 mb-2">placeUni</translate-text>
+            <h5 class="text-center">
+              AND TECHNOLOGIES
+            </h5> 
+            <div class="d-flex flex-column mt-2 mb-2">
+              <div class="skills-wrapper align-self-center justify-content-center">
+                <div class="skill mt-5 mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/jsSquare.png" alt=""> 
                   </div>
-                  <translate-text class="mt-1 mb-2">periodEducation2</translate-text>
-                </p>
-                <p class="experience-description">
-                  <translate-text>educationDesc2</translate-text>
-                </p>
-              </div>
-              <div class="logo-container">
-                <img src="unical.jpg" alt="">
-              </div>
-            </div>
-          </section>
-          <section class="about second-education">
-            <div class="block d-flex align-items-center justify-content-end">
-              <div>
-                <h4>
-                  <translate-text class="little-title">itis</translate-text>
-                </h4>
-                <p class="period">
                   <div>
-                    <translate-text class="mt-1 mb-2">itisPlace</translate-text>
+                    <h4 class="d-flex align-items-center">
+                      <div>JAVASCRIPT</div> 
+                    </h4>
+                    <p>
+                      I largely used javascript during the Boolean Trainee and during the developing phase of my personal projects. I developed intermediate knowledge about this wonderful programming language
+                    </p>
                   </div>
-                  <translate-text class="mt-1 mb-2">itisPeriod</translate-text>
-                </p>
-                <p class="experience-description">
-                  <translate-text>itisDesc</translate-text>
-                </p>
-              </div>
-              <div class="logo-container">
-                <img src="itis.jpg" alt="">
+                </div>
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/bootstrap.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      BOOTSTRAP
+                    </h4>
+                    <p>
+                      Bootstrap is a great improvement in terms of code manutenibility and development time. I used this CSS framework in several project in NTT and during the Boolean Trainee
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/html5.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      HTML
+                    </h4>
+                    <p>
+                      I can build semantic HTML code thanks to my experience. I mastered this skill during these years as front-end developer
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/css3.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      CSS
+                    </h4>
+                    <p>
+                      What kind of front-end developer would I be if i did not know CSS? I love customize and stylize websites and projects with good CSS lines
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/java.jpg" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      JAVA
+                    </h4>
+                    <p>
+                      Java is the programming language thanks to wich i learned OOP. During my period in NTT DATA I developed some SOAP micro-services with JAVA for a software that manage Carrefour warehouses.
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/angular.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      ANGULAR
+                    </h4>
+                    <p>
+                      I developed this skill working in NTT DATA for a big project for MERFINA MERCEDES BUSSINESS LINK. 
+                    </p> 
+                  </div>
+                </div>
+  
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/ts.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      TYPESCRIPT
+                    </h4>
+                    <p>
+                      This skill is closely related to angular and it hasn't been a problem for me switching from javascript to typescript
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/scss.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      SCSS
+                    </h4>
+                    <p>
+                      I approached this prepocessor during Boolean and I think that is a powerful tool. The NTT projects that I worked on make use of it.
+                    </p>
+                  </div>
+                </div>
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/blender.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      BLENDER
+                    </h4>
+                    <p>
+                      I have been always passionate about CGI and 3D graphics and I obtained a good skilled level as a self-thought thanks to a lot of practice, tutorials and documentation in parallel with my Communication studies
+                    </p>
+                  </div>
+                </div>
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/three.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      THREE.JS
+                    </h4>
+                    <p>
+                      Recently I entered this wonderful world that I am still learning during weekends and holidays
+                    </p>
+                  </div>
+                </div>
+                <div class="skill mb-5">
+                  <div class="align-self-center">
+                    <img class="skill-icon" src="/git.png" alt=""> 
+                  </div>
+                  <div>
+                    <h4 class="d-flex align-items-center">
+                      GIT
+                    </h4>
+                    <p>
+                      I use GIT every day to record the changes made to a project, storing those changes, then allowing a my teams to reference them as needed.
+                    </p>
+                  </div>
+                  </div>
               </div>
             </div>
           </section>
         </div>
-      </div>
-
-      <div class="side-wrapper">
-        <section style="margin-top: 16em">
-          <h2 class="text-center">
-            SKILLS 
-          </h2>
+  
+        <div class="side-wrapper">
+          <section>
+            <h2 class="mt-5 mb-5"><translate-text>contacts</translate-text></h2>
+            <form id="contact-form">
+                <p class="text-center mt-5 mb-5">
+                  <translate-text>emailTo</translate-text>
+                  <a target="_blank" href="mailto:salvatore.butera1998@gmail.com">
+                    salvatore.butera1998@gmail.com
+                  </a>
+                </p>
+                <input placeholder="Name or Company Name" type="text" name="name" id="name">
+                <input placeholder="Email" type="email" name="email" id="email">
+                <input placeholder="Subject" type="text" name="subject" id="subject">
+                <textarea placeholder="message" name="message" id="message" cols="30" rows="10"></textarea>
+               <div class="text-center mt-5 mb-5">
+                <div class="d-flex align-items-center justify-content-center">
+                  <input type="checkbox" name="captcha" id="captcha">
+                  <label class="p-4" for="captcha"> <translate-text>robot</translate-text> </label>
+                </div>
+                <button class="mt-5" type="submit" disabled>
+                  <translate-text>Send</translate-text>
+                </button>
+                <div class="spinner">
+                  <div class="lds-ripple"><div></div><div></div></div>
+                </div>
+               </div>
+            </form>
+            <div id="success">
+              <div class="text-center">
+                <div class="mt-5 mb-2">
+                  <i style="font-size: 5em; color: #6ba365;" class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="mb-5">
+                  <translate-text>msgSuccess</translate-text>
+                </div>
+              </div>
+            </div>
+            <div id="fail">
+              <div class="text-center">
+                <div class="mt-5 mb-2">
+                  <i style="font-size: 5em; color: #a36565;" class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="mb-5">
+                  <translate-text>msgFail</translate-text>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer class="">
+          <div class="d-flex justify-content-center align-items-lg-start">
+            <div class="p-3">
+              <h5><translate-text>contactsFooter</translate-text></h5>
+              <div class="p-2"><i class="fa fa-phone" aria-hidden="true"></i> 3460415196</div>
+              <div class="p-2"><i class="fa fa-map-marker" aria-hidden="true"></i> Via Nazionale 114, Carlopoli, CZ </div>
+              <div class="p-2"><i class="fa fa-envelope" aria-hidden="true"></i> salvatore.butera1998@gmail.com</div>
+            </div>
+            <div class="p-3">
+              <h5><translate-text>links</translate-text></h5>
+             <div class="p-2"> <a target="_blank" href="https://www.linkedin.com/in/salvatore-butera-16a271143"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i> Linkedin</a></div>
+             <div class="p-2"> <a target="_blank" href="https://github.com/SalvatoreB98"><i class="fa fa-github" aria-hidden="true"></i></i> Github</a> </div>
+            </div>
+          </div>
           <h5 class="text-center">
-            AND TECHNOLOGIES
-          </h5> 
-          <div class="d-flex flex-column mt-2 mb-2">
-            <div class="skills-wrapper align-self-center justify-content-center">
-              <div class="skill mt-5 mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/jsSquare.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    <div>JAVASCRIPT</div> 
-                  </h4>
-                  <p>
-                    I largely used javascript during the Boolean Trainee and during the developing phase of my personal projects. I developed intermediate knowledge about this wonderful programming language
-                  </p>
-                </div>
-              </div>
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/bootstrap.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    BOOTSTRAP
-                  </h4>
-                  <p>
-                    Bootstrap is a great improvement in terms of code manutenibility and development time. I used this CSS framework in several project in NTT and during the Boolean Trainee
-                  </p>
-                </div>
-              </div>
-
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/html5.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    HTML
-                  </h4>
-                  <p>
-                    I can build semantic HTML code thanks to my experience. I mastered this skill during these years as front-end developer
-                  </p>
-                </div>
-              </div>
-
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/css3.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    CSS
-                  </h4>
-                  <p>
-                    What kind of front-end developer would I be if i did not know CSS? I love customize and stylize websites and projects with good CSS lines
-                  </p>
-                </div>
-              </div>
-
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/java.jpg" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    JAVA
-                  </h4>
-                  <p>
-                    Java is the programming language thanks to wich i learned OOP. During my period in NTT DATA I developed some SOAP micro-services with JAVA for a software that manage Carrefour warehouses.
-                  </p>
-                </div>
-              </div>
-
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/angular.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    ANGULAR
-                  </h4>
-                  <p>
-                    I developed this skill working in NTT DATA for a big project for MERFINA MERCEDES BUSSINESS LINK. 
-                  </p> 
-                </div>
-              </div>
-
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/ts.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    TYPESCRIPT
-                  </h4>
-                  <p>
-                    This skill is closely related to angular and it hasn't been a problem for me switching from javascript to typescript
-                  </p>
-                </div>
-              </div>
-
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/scss.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    SCSS
-                  </h4>
-                  <p>
-                    I approached this prepocessor during Boolean and I think that is a powerful tool. The NTT projects that I worked on make use of it.
-                  </p>
-                </div>
-              </div>
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/blender.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    BLENDER
-                  </h4>
-                  <p>
-                    I have been always passionate about CGI and 3D graphics and I obtained a good skilled level as a self-thought thanks to a lot of practice, tutorials and documentation in parallel with my Communication studies
-                  </p>
-                </div>
-              </div>
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/three.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    THREE.JS
-                  </h4>
-                  <p>
-                    Recently I entered this wonderful world that I am still learning during weekends and holidays
-                  </p>
-                </div>
-              </div>
-              <div class="skill mb-5">
-                <div class="align-self-center">
-                  <img class="skill-icon" src="/git.png" alt=""> 
-                </div>
-                <div>
-                  <h4 class="d-flex align-items-center">
-                    GIT
-                  </h4>
-                  <p>
-                    I use GIT every day to record the changes made to a project, storing those changes, then allowing a my teams to reference them as needed.
-                  </p>
-                </div>
-                </div>
-            </div>
-          </div>
-        </section>
+          </h5>
+          <p class="text-center" class="p-3">
+            <translate-text>gdpr</translate-text>
+          </p>
+          <p class="text-center" class="p-3">
+            <translate-text>downloadCv</translate-text>
+          </p>
+        </footer>
       </div>
-
-      <div class="side-wrapper">
-        <section>
-          <h2 class="mt-5 mb-5"><translate-text>contacts</translate-text></h2>
-          <form id="contact-form">
-              <p class="text-center mt-5 mb-5">
-                <translate-text>emailTo</translate-text>
-                <a target="_blank" href="mailto:salvatore.butera1998@gmail.com">
-                  salvatore.butera1998@gmail.com
-                </a>
-              </p>
-              <input placeholder="Name or Company Name" type="text" name="name" id="name">
-              <input placeholder="Email" type="email" name="email" id="email">
-              <input placeholder="Subject" type="text" name="subject" id="subject">
-              <textarea placeholder="message" name="message" id="message" cols="30" rows="10"></textarea>
-             <div class="text-center mt-5 mb-5">
-              <div class="d-flex align-items-center justify-content-center">
-                <input type="checkbox" name="captcha" id="captcha">
-                <label class="p-4" for="captcha"> <translate-text>robot</translate-text> </label>
-              </div>
-              <button class="mt-5" type="submit" disabled>
-                <translate-text>Send</translate-text>
-              </button>
-              <div class="spinner">
-                <div class="lds-ripple"><div></div><div></div></div>
-              </div>
-             </div>
-          </form>
-          <div id="success">
-            <div class="text-center">
-              <div class="mt-5 mb-2">
-                <i style="font-size: 5em; color: #6ba365;" class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
-              </div>
-              <div class="mb-5">
-                <translate-text>msgSuccess</translate-text>
-              </div>
-            </div>
-          </div>
-          <div id="fail">
-            <div class="text-center">
-              <div class="mt-5 mb-2">
-                <i style="font-size: 5em; color: #a36565;" class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
-              </div>
-              <div class="mb-5">
-                <translate-text>msgFail</translate-text>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <footer class="">
-        <div class="d-flex justify-content-center align-items-lg-start">
-          <div class="p-3">
-            <h5><translate-text>contactsFooter</translate-text></h5>
-            <div class="p-2"><i class="fa fa-phone" aria-hidden="true"></i> 3460415196</div>
-            <div class="p-2"><i class="fa fa-map-marker" aria-hidden="true"></i> Via Nazionale 114, Carlopoli, CZ </div>
-            <div class="p-2"><i class="fa fa-envelope" aria-hidden="true"></i> salvatore.butera1998@gmail.com</div>
-          </div>
-          <div class="p-3">
-            <h5><translate-text>links</translate-text></h5>
-           <div class="p-2"> <a target="_blank" href="https://www.linkedin.com/in/salvatore-butera-16a271143"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i> Linkedin</a></div>
-           <div class="p-2"> <a target="_blank" href="https://github.com/SalvatoreB98"><i class="fa fa-github" aria-hidden="true"></i></i> Github</a> </div>
-          </div>
-        </div>
-        <h5 class="text-center">
-        </h5>
-        <p class="text-center" class="p-3">
-          <translate-text>gdpr</translate-text>
-        </p>
-        <p class="text-center" class="p-3">
-          <translate-text>downloadCv</translate-text>
-        </p>
-      </footer>
-    </div>
-    <script type="module" src="/main.js"></script>
+      <script type="module" src="/main.js"></script>
+    </main>
   </body>
 </html>

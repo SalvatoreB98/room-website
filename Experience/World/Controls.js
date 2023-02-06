@@ -23,8 +23,6 @@ export default class Controls {
         }, 1000)
         this.circle1 = this.experience.world.floor.circle1;
         this.circle2 = this.experience.world.floor.circle2;
-        this.circle3 = this.experience.world.floor.circle3;
-        
       
         this.setScrolltrigger();
     }
@@ -110,10 +108,6 @@ export default class Controls {
                     x:0.9,
                     y:0.9,
                     z:0.9
-                }).to(this.circle3.scale,{
-                    x:0.7,
-                    y:0.7,
-                    z:0.7
                 })
             }
         })

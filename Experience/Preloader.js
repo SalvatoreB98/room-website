@@ -5,6 +5,7 @@ import GSAP from 'gsap';
 export default class Preloader extends EventEmitter{
     constructor(){
         super();
+        this.preloader();
         this.experience = new Experience();
         this.scene = this.experience.scene;
         this.resources = this.experience.resources;
@@ -13,10 +14,19 @@ export default class Preloader extends EventEmitter{
         this.sizes = this.experience.sizes;
         this.world = this.experience.world;
         this.world.on("worldready",()=>{
-            console.log("WORLDLOADED")
             this.playIntro();
             this.setAssets();
+            this.main.style.display='block'
+             this.loaderSection.style.opacity = '0';
+            setTimeout(()=>{
+                 this.loaderSection.style.display = 'none';
+            },1000)
         })
+    }
+    preloader(){
+        this.loaderSection = document.querySelector("loader")
+        this.main = document.querySelector("main")
+        this.main.style.display='none'
     }
     playIntro(){
         this.timeline = new GSAP.timeline;

@@ -1,6 +1,7 @@
 import './style.css';
 import './tagStyle.css';
 import './styleDarkTheme.css';
+import './styleLoader.css';
 import './spinner.css';
 import Experience from './Experience/Experience.js';
 import emailjs from '@emailjs/browser';

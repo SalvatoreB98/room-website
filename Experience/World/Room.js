@@ -36,9 +36,9 @@ export default class Room {
             this.action2.play();
             this.action3.play();
         }
-        this.getModels();
         this.myTime();
         this.setModel();
+        this.getModels();
         this.onMouseMove();
     }
     getModels(){
@@ -149,9 +149,9 @@ export default class Room {
             },500)
             
             GSAP.to(this.floor.material.color, {
-                r:0.71,
-                g:0.64,
-                b:0.51
+                r:0.05,
+                g:0.05,
+                b:0.05
             })
 
             this.experience.world.floor.circle1.material.color = {
@@ -163,11 +163,6 @@ export default class Room {
                 r:0.07,
                 g:0.07,
                 b:0.07
-            }
-            this.experience.world.floor.circle3.material.color = {
-                r:0.06,
-                g:0.06,
-                b:0.06
             }
            
         } else {
@@ -187,11 +182,6 @@ export default class Room {
                 r: 0.78/1.65,
                 g: 0.67/1.65,
                 b: 0.47/1.65
-            }
-            this.experience.world.floor.circle3.material.color = {
-                r: 0.78/1.80,
-                g: 0.67/1.80,
-                b: 0.47/1.80
             }
         }
     }  
