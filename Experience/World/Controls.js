@@ -15,6 +15,13 @@ export default class Controls {
         this.floor = this.experience.world.floor;
         this.sizes = this.experience.sizes;
         this.animatedTag = document.querySelector(".animated");
+        this.prevScroll;
+        this.page = document.getElementsByClassName("page")[0];
+        this.lerp = {
+            current:0,
+            target: 0,
+            ease: 0.02
+        }
         this.smoothScroll();
         GSAP.registerPlugin(ScrollTrigger);
         this.getHTMLElements()
@@ -117,8 +124,7 @@ export default class Controls {
     smoothScroll(){
         var isMobile = /Mobi/i.test(window.navigator.userAgent)
         if(!isMobile){
-            var page = document.getElementsByClassName("page")[0];
-            var height = page.getBoundingClientRect().height - 1;
+            var page = this.page;
             var speed = 0.04;
             var offset = 10;
 
@@ -138,6 +144,14 @@ export default class Controls {
 
     onScroll(e){
         this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+        if(this.scrollTop > this.prevScroll){
+            this.lerp.target += 0.1;
+        } else {
+            this.lerp.target -= 0.2;
+        }
+        this.prevScroll = this.scrollTop 
+
+        this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
         this.animatedTag.style = "opacity:0"
         setTimeout(()=>{
             this.animatedTag.style.display = "none"
@@ -145,6 +159,9 @@ export default class Controls {
         if(this.firstExperience.getBoundingClientRect().top < this.experience.sizes.height){
             
         }
+
+
+
     }
     getHTMLElements(){
         this.firstExperience = document.querySelector(".first-experience")
@@ -160,6 +177,13 @@ export default class Controls {
     }
 
     update(){
-        this.camera.update();                            
+        this.camera.update();     
+        this.lerp.current = GSAP.utils.interpolate(
+            this.lerp.current,
+            this.lerp.target,
+            this.lerp.ease
+        );    
+        this.circle1.scale.x= this.circle1.scale.y = this.circle1.scale.z  = this.lerp.current;                       
+        this.circle2.scale.x= this.circle2.scale.y = this.circle2.scale.z  = this.lerp.current * 0.5;                       
     }
 }
