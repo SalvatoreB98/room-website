@@ -125,7 +125,6 @@ export default class Controls {
                         scrub: 1,
                         invalidateOnRefresh: true,
                         markers: false,
-                        markers: true,
                         onComplete: () => ScrollTrigger.refresh()
                     }
                 }).to(this.camera.orthographicCamera.position,{
