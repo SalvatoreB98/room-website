@@ -102,6 +102,7 @@ export default class Room {
 
             }
 
+
             if(child.name.startsWith("Screen")){
                 child.material = new THREE.MeshPhysicalMaterial({
                     color: 'black',
@@ -120,7 +121,11 @@ export default class Room {
                     metalness: 100
                 })
             }
+            if(child.name.startsWith("ball") ){
+                console.log(child)
+                this.ball = child;
 
+            }
             this.roomChildren[child.name]= child;
 
             
@@ -151,7 +156,19 @@ export default class Room {
     }
     onMouseMove(){
         window.addEventListener("mousemove", (e)=>{
-            
+            var mouse = new THREE.Vector2();
+            mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
+            mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
+
+            var raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera( mouse, this.camera.orthographicCamera );
+            var intersects = raycaster.intersectObject( this.ball );
+
+            if(intersects.length > 0) {
+               document.body.style.cursor = 'pointer'
+            } else {
+                document.body.style.cursor = 'default'
+            }
             this.rotation = (e.clientX - window.innerWidth / 2) * 2 / window.innerWidth * 2;
             this.lerp.target = this.rotation*0.1;
         })
