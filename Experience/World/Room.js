@@ -259,7 +259,6 @@ export default class Room {
         if (intersects.length > 0) {
             
             var object = intersects[0].object;
-            console.log(object)
             if(object.name.startsWith('Icosphere')){
                 this.bounce.stop();
                 this.bounce.play();

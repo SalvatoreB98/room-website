@@ -119,9 +119,9 @@ export default class Controls {
                 
                 this.contactTimeline = new GSAP.timeline({
                     scrollTrigger: {
-                        trigger: ".contacts",
+                        trigger: ".pre-contacts",
                         start: "top bottom",
-                        end: "top top+500px",
+                        end: "bottom top+500px",
                         scrub: 1,
                         invalidateOnRefresh: true,
                         markers: false,
@@ -150,6 +150,7 @@ export default class Controls {
 
             
             function smoothScroll() {
+                
                 offset += (window.pageYOffset - offset) * speed;
                 var scroll = "translateY(-" + offset + "px) translateZ(0)";
                 page.style.transform = scroll;
@@ -158,6 +159,8 @@ export default class Controls {
                 var ends = document.querySelectorAll(".gsap-marker-end");
                 ScrollTrigger.refresh();
             }
+
+
             smoothScroll(); 
         }
     }
