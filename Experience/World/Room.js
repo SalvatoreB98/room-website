@@ -43,6 +43,11 @@ export default class Room {
             this.action3 = this.mixerH.clipAction( this.clips[1] );
            
             this.bounce = this.mixerBall.clipAction( this.clips[0] );
+            console.log(THREE.LoopOnce)
+            this.bounce.setLoop(THREE.LoopOnce);
+            this.bounce.clampWhenFinished = true;
+            this.bounce.enable = true;
+
             this.action1.play();
             this.action2.play();
             this.action3.play();
@@ -238,7 +243,8 @@ export default class Room {
             
             var object = intersects[0].object;
             console.log(object)
-            if(object.name == 'Icosphere'){
+            if(object.name.startsWith('Icosphere')){
+                this.bounce.stop();
                 this.bounce.play();
                 this.ball == object;
             }
@@ -257,7 +263,7 @@ export default class Room {
             this.lerp.ease
         );    
         this.actualRoom.rotation.y = this.lerp.current;
-        this.mixerS.update(this.clock.getDelta()/10)
-        this.mixerS.update(this.clock.getDelta()*10)
+        this.mixerBall.update(this.clock.getDelta())
+        this.mixerS.update(this.clock.getDelta()/10);
     }
 }
