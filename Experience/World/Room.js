@@ -12,34 +12,48 @@ export default class Room {
     constructor(canvas) {
         this.experience = new Experience();
         this.scene = this.experience.scene;
+        this.renderer = this.experience.renderer;
         this.resources = this.experience.resources;
+        this.camera = this.experience.camera;
         this.room = this.resources.items.room;
         this.actualRoom = this.room.scene;
         this.roomChildren = {};
+        this.ball;
         this.controls = this.experience.controls;
         this.lerp = {
             current:0,
             target: 0,
             ease: 0.02
         }
+        /** Animations*/
         this.clock = new THREE.Clock();
         this.mixerS = new THREE.AnimationMixer( this.room.scene );
         this.mixerM = new THREE.AnimationMixer( this.room.scene );
         this.mixerH = new THREE.AnimationMixer( this.room.scene );
+        this.mixerBall = new THREE.AnimationMixer( this.room.scene );
         this.clips = this.room.animations;
+        this.raycaster = new THREE.Raycaster();
+        this.renderer.domElement.addEventListener('click', this.onClick.bind(this), false);
+        this.mouse = new THREE.Vector2();
 
         if(this.clips.length>0){
-            this.action1 = this.mixerS.clipAction( this.clips[2] );
-            this.action2 = this.mixerM.clipAction( this.clips[1] );
-            this.action3 = this.mixerH.clipAction( this.clips[0] );
+            console.log(this.clips)
+            this.action1 = this.mixerS.clipAction( this.clips[3] );
+            this.action2 = this.mixerM.clipAction( this.clips[2] );
+            this.action3 = this.mixerH.clipAction( this.clips[1] );
+           
+            this.bounce = this.mixerBall.clipAction( this.clips[0] );
             this.action1.play();
             this.action2.play();
             this.action3.play();
         }
+
+
         this.myTime();
         this.setModel();
         this.getModels();
         this.onMouseMove();
+
     }
     getModels(){
         this.actualRoom.children.forEach(obj => {
@@ -57,6 +71,9 @@ export default class Room {
     setModel(){
 
         this.actualRoom.children.forEach(child => {
+
+          
+          
             child.castShadow = true;
             child.receiveShadow = true;
 
@@ -100,6 +117,8 @@ export default class Room {
             }
 
             this.roomChildren[child.name]= child;
+
+            
         });
 
         const intensity = 0;
@@ -205,7 +224,28 @@ export default class Room {
         },30*1000)
     }
 
+    onClick(){
+        var mouse = new THREE.Vector2();
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        this.raycaster.setFromCamera(mouse, this.camera.orthographicCamera);
+        
+        var intersects = this.raycaster.intersectObject(this.scene, true);
 
+        if (intersects.length > 0) {
+            
+            var object = intersects[0].object;
+            console.log(object)
+            if(object.name == 'Icosphere'){
+                this.bounce.play();
+                this.ball == object;
+            }
+
+
+        }
+    }
 
     resize() {
 
@@ -218,5 +258,6 @@ export default class Room {
         );    
         this.actualRoom.rotation.y = this.lerp.current;
         this.mixerS.update(this.clock.getDelta()/10)
+        this.mixerS.update(this.clock.getDelta()*10)
     }
 }

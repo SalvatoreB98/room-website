@@ -11,8 +11,8 @@ export default class Renderer {
         this.scene = this.experience.scene;
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
-        this.isMobile = /Mobi/i.test(window.navigator.userAgent)
-
+        this.isMobile = /Mobi/i.test(window.navigator.userAgent);
+        this.domElement = document.body;
         this.setRenderer()
     }
 
