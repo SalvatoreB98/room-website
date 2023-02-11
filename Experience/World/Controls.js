@@ -115,7 +115,28 @@ export default class Controls {
                     x:0.9,
                     y:0.9,
                     z:0.9
-                })
+                });
+                
+                this.contactTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".contacts",
+                        start: "top bottom",
+                        end: "top top+500px",
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                        markers: false,
+                        markers: true,
+                        onComplete: () => ScrollTrigger.refresh()
+                    }
+                }).to(this.camera.orthographicCamera.position,{
+                    x: 1.4,
+                    y: 0.43,
+                    z: 0.5
+                },0).to(this.camera.orthographicCamera,{
+                    zoom: 7
+                },0).to(this.camera.orthographicCamera.rotation,{
+                    x: -Math.PI/4
+                },0)
             }
         })
     }

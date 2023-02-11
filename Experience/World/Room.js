@@ -29,9 +29,9 @@ export default class Room {
         this.clips = this.room.animations;
 
         if(this.clips.length>0){
-            this.action1 = this.mixerS.clipAction( this.clips[1] );
-            this.action2 = this.mixerM.clipAction( this.clips[0] );
-            this.action3 = this.mixerH.clipAction( this.clips[2] );
+            this.action1 = this.mixerS.clipAction( this.clips[2] );
+            this.action2 = this.mixerM.clipAction( this.clips[1] );
+            this.action3 = this.mixerH.clipAction( this.clips[0] );
             this.action1.play();
             this.action2.play();
             this.action3.play();
@@ -127,7 +127,7 @@ export default class Room {
     }
     onMouseMove(){
         window.addEventListener("mousemove", (e)=>{
-        
+            
             this.rotation = (e.clientX - window.innerWidth / 2) * 2 / window.innerWidth * 2;
             this.lerp.target = this.rotation*0.1;
         })
