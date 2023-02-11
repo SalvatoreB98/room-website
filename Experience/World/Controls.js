@@ -22,6 +22,7 @@ export default class Controls {
             target: 0,
             ease: 0.02
         }
+        
         this.smoothScroll();
         GSAP.registerPlugin(ScrollTrigger);
         this.getHTMLElements()
@@ -140,7 +141,7 @@ export default class Controls {
         })
     }
 
-
+    
     smoothScroll(){
         var isMobile = /Mobi/i.test(window.navigator.userAgent)
         if(!isMobile){

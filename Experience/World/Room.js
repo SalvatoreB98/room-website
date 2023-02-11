@@ -1,12 +1,15 @@
 import Experience from "../Experience.js";
 import * as THREE from 'three';
 import GSAP from "gsap";
-import { Clock } from "three";
+import { Clock, Loader } from "three";
 import moment from 'moment'
 import Controls from './Controls';
 import { RectAreaLight } from "three";
 import {RectAreaLightHelper} from 'three/examples/jsm/helpers/RectAreaLightHelper'
 import { on } from "events";
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
+import Montserrat from '../../src/fonts/Montserrat.json'
 export default class Room {
     static instance;
     constructor(canvas) {
@@ -31,6 +34,7 @@ export default class Room {
         this.mixerM = new THREE.AnimationMixer( this.room.scene );
         this.mixerH = new THREE.AnimationMixer( this.room.scene );
         this.mixerBall = new THREE.AnimationMixer( this.room.scene );
+        
         this.clips = this.room.animations;
         this.raycaster = new THREE.Raycaster();
         this.renderer.domElement.addEventListener('click', this.onClick.bind(this), false);
@@ -59,6 +63,9 @@ export default class Room {
         this.getModels();
         this.onMouseMove();
 
+        document.body.onkeyup = (e)=>{this.onKeyUp(e)}
+
+
     }
     getModels(){
         this.actualRoom.children.forEach(obj => {
@@ -74,6 +81,32 @@ export default class Room {
         });
     }
     setModel(){
+
+        const loader = new FontLoader();
+                loader.load( 'src/fonts/Montserrat.json',(font) => {
+                
+                    const geometry = new TextGeometry( 'Hello three.js!', {
+                        font: font,
+                        size: 80,
+                        height: 5,
+                        curveSegments: 12,
+                        bevelEnabled: true,
+                        bevelThickness: 10,
+                        bevelSize: 8,
+                        bevelOffset: 0,
+                        bevelSegments: 5
+                    } );
+                    const textMesh = new THREE.Mesh(geometry,[
+                        new THREE.MeshPhongMaterial({color: 0x00000})
+                    ])
+                    textMesh.castShadow = true;
+                    textMesh.position.x = 2
+                    textMesh.position.y = 3
+                    textMesh.position.z = 2
+                    textMesh.scale.set(5,5,5)
+                    console.log(textMesh)
+                    this.scene.add(textMesh)
+                } );
 
         this.actualRoom.children.forEach(child => {
 
@@ -122,12 +155,17 @@ export default class Room {
                 })
             }
             if(child.name.startsWith("ball") ){
-                console.log(child)
+                
                 this.ball = child;
 
             }
-            this.roomChildren[child.name]= child;
+            if(child.name.startsWith("tablet") ){
+                
 
+              
+            }
+            this.roomChildren[child.name]= child;
+            
             
         });
 
@@ -269,17 +307,34 @@ export default class Room {
         }
     }
 
+    onKeyUp(e) {
+        if (e.key == " " ||
+            e.code == "Space" ||      
+            e.keyCode == 32      
+        ) {
+            this.bounce.stop();
+            this.bounce.play(); 
+        }
+      }
+
+
     resize() {
 
     }
-    update(delta) {
+    
+    update() {
+
+        let delta = this.clock.getDelta(); 
+
         this.lerp.current = GSAP.utils.interpolate(
             this.lerp.current,
             this.lerp.target,
             this.lerp.ease
-        );    
+        ); 
+
         this.actualRoom.rotation.y = this.lerp.current;
-        this.mixerBall.update(this.clock.getDelta())
-        this.mixerS.update(this.clock.getDelta()/10);
+        this.mixerS.update(delta/5);
+        this.mixerBall.update(delta*1.5)
     }
+
 }
