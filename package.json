@@ -20,6 +20,7 @@
     "events": "^3.3.0",
     "gsap": "^3.11.4",
     "js-captcha": "^1.3.0",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "three-css3drenderer": "^1.0.1"
   }
 }
