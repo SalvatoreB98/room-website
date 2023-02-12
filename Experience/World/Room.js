@@ -1,15 +1,12 @@
 import Experience from "../Experience.js";
 import * as THREE from 'three';
 import GSAP from "gsap";
-import { Clock, Loader } from "three";
+
 import moment from 'moment'
-import Controls from './Controls';
-import { RectAreaLight } from "three";
+
 import {RectAreaLightHelper} from 'three/examples/jsm/helpers/RectAreaLightHelper'
-import { on } from "events";
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import Montserrat from '../../src/fonts/Montserrat.json'
+
+
 export default class Room {
     static instance;
     constructor(canvas) {
@@ -82,31 +79,6 @@ export default class Room {
     }
     setModel(){
 
-        const loader = new FontLoader();
-                loader.load( 'src/fonts/Montserrat.json',(font) => {
-                
-                    const geometry = new TextGeometry( 'Hello three.js!', {
-                        font: font,
-                        size: 80,
-                        height: 5,
-                        curveSegments: 12,
-                        bevelEnabled: true,
-                        bevelThickness: 10,
-                        bevelSize: 8,
-                        bevelOffset: 0,
-                        bevelSegments: 5
-                    } );
-                    const textMesh = new THREE.Mesh(geometry,[
-                        new THREE.MeshPhongMaterial({color: 0x00000})
-                    ])
-                    textMesh.castShadow = true;
-                    textMesh.position.x = 2
-                    textMesh.position.y = 3
-                    textMesh.position.z = 2
-                    textMesh.scale.set(5,5,5)
-                    console.log(textMesh)
-                    this.scene.add(textMesh)
-                } );
 
         this.actualRoom.children.forEach(child => {
 
