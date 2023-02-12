@@ -64,7 +64,6 @@ section.about.introduction{
   width: 100%;
   z-index: 99;
   position: absolute;
-  height: 100vh;
 }
 translate-text{
   display: inline-block;

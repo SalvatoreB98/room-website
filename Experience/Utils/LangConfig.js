@@ -85,7 +85,7 @@ export const translations = {
         contactsFooter: "Contacts",
         links: "Links",
         gdpr: "I authorize the processing of personal data contained in my curriculum vitae based on art. 13 GDPR 679/16",
-        downloadCv: "You can download my CV <a href=''>here</a>"
+        downloadCv: "You can download my CV  <a target='_blank' href='/sbcvit.pdf' download>here</a>"
     }
 }
 {/* <span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> */}
