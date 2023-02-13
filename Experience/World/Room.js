@@ -1,11 +1,10 @@
 import Experience from "../Experience.js";
 import * as THREE from 'three';
 import GSAP from "gsap";
-
 import moment from 'moment'
-
 import {RectAreaLightHelper} from 'three/examples/jsm/helpers/RectAreaLightHelper'
-
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 export default class Room {
     static instance;
@@ -31,7 +30,7 @@ export default class Room {
         this.mixerM = new THREE.AnimationMixer( this.room.scene );
         this.mixerH = new THREE.AnimationMixer( this.room.scene );
         this.mixerBall = new THREE.AnimationMixer( this.room.scene );
-        
+        this.textMesh;
         this.clips = this.room.animations;
         this.raycaster = new THREE.Raycaster();
         this.renderer.domElement.addEventListener('click', this.onClick.bind(this), false);
@@ -79,6 +78,7 @@ export default class Room {
     }
     setModel(){
 
+    
 
         this.actualRoom.children.forEach(child => {
 
@@ -132,9 +132,28 @@ export default class Room {
 
             }
             if(child.name.startsWith("tablet") ){
-                
+                this.tablet = child;
+                this.inputName = document.getElementById("name")
+                this.inputName.addEventListener("input",()=>{ this.updateText() })
+                const loader = new FontLoader();
+                loader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_bold.typeface.json', ( font ) => {
+                    const geometry = new TextGeometry( 'Hello three.js!', {
+                        font: font,
+                        size: 0.5,
+                        height: 0.1,
+                    } );
+                    const textMaterial = new THREE.MeshPhongMaterial( { color: 'black' } );
 
-              
+                    this.textMesh = new THREE.Mesh( geometry, textMaterial );
+                    this.textMesh.position.set( 0, 0, 0 );
+                    this.textMesh.scale.set(0.02,0.02,0)
+                    this.textMesh.rotation.x = -Math.PI/2
+                    this.textMesh.rotation.z = -Math.PI/4 - 0.1
+                    this.textMesh.position.x = 1.55
+                    this.textMesh.position.y = 0.5
+                    this.textMesh.position.z = 0.22
+                    this.actualRoom.children.push(this.textMesh)
+                } );
             }
             this.roomChildren[child.name]= child;
             
@@ -287,8 +306,38 @@ export default class Room {
             this.bounce.stop();
             this.bounce.play(); 
         }
-      }
+    }
 
+    updateText() {
+        var text = document.getElementById('name').value;
+        this.scene.remove(this.textMesh);
+        this.createTextGeometry(this.textMesh.geometry.font);
+    }
+    createTextGeometry(font) {
+        console.log(document.getElementById('name').value)
+        var text = document.getElementById('name').value;
+        var geometry = new TextGeometry(text, {
+          font: font,
+          size: 0.5,
+          height: 0.1,
+          curveSegments: 12,
+          bevelEnabled: true,
+          bevelThickness: 0.05,
+          bevelSize: 0.05,
+          bevelSegments: 5
+        });
+        const textMaterial = new THREE.MeshPhongMaterial( { color: 'black' } );
+
+                    this.textMesh = new THREE.Mesh( geometry, textMaterial );
+                    this.textMesh.position.set( 0, 0, 0 );
+                    this.textMesh.scale.set(0.02,0.02,0)
+                    this.textMesh.rotation.x = -Math.PI/2
+                    this.textMesh.rotation.z = -Math.PI/4 - 0.1
+                    this.textMesh.position.x = 1.55
+                    this.textMesh.position.y = 0.5
+                    this.textMesh.position.z = 0.22
+        this.scene.add(this.textMesh);
+      }
 
     resize() {
 
@@ -303,8 +352,7 @@ export default class Room {
             this.lerp.target,
             this.lerp.ease
         ); 
-
-        this.actualRoom.rotation.y = this.lerp.current;
+        this.camera.orthographicCamera.rotation.y = this.lerp.current/10;
         this.mixerS.update(delta/5);
         this.mixerBall.update(delta*1.5)
     }
