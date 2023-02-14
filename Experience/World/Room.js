@@ -30,20 +30,18 @@ export default class Room {
         this.mixerM = new THREE.AnimationMixer( this.room.scene );
         this.mixerH = new THREE.AnimationMixer( this.room.scene );
         this.mixerBall = new THREE.AnimationMixer( this.room.scene );
-        this.textMesh;
+        this.textMesh = [];
         this.clips = this.room.animations;
         this.raycaster = new THREE.Raycaster();
         this.renderer.domElement.addEventListener('click', this.onClick.bind(this), false);
         this.mouse = new THREE.Vector2();
 
         if(this.clips.length>0){
-            console.log(this.clips)
             this.action1 = this.mixerS.clipAction( this.clips[3] );
             this.action2 = this.mixerM.clipAction( this.clips[2] );
             this.action3 = this.mixerH.clipAction( this.clips[1] );
            
             this.bounce = this.mixerBall.clipAction( this.clips[0] );
-            console.log(THREE.LoopOnce)
             this.bounce.setLoop(THREE.LoopOnce);
             this.bounce.clampWhenFinished = true;
             this.bounce.enable = true;
@@ -134,8 +132,6 @@ export default class Room {
             if(child.name.startsWith("tablet") ){
                 this.tablet = child;
 
-                console.log(this.tablet.children[0].material)
-
                 // Create the area light using the RectAreaLight or RectAreaLightUniform
                 var areaLight = new THREE.RectAreaLight(0xffffff, 5, 0.13, 0.20);
                 // Position the area light at the same position as the light source mesh
@@ -148,13 +144,21 @@ export default class Room {
                 var areaLightHelper = new RectAreaLightHelper(areaLight);
                 // this.scene.add(areaLightHelper);
                 this.scene.add(areaLight);
-
-                this.inputName = document.getElementById("name")
-                this.inputName.addEventListener("input",()=>{ this.updateText() })
+                this.inputs = [
+                    document.getElementById("name"),
+                    document.getElementById("email"),
+                    document.getElementById("subject"),
+                    document.getElementById("message")
+                ]
+                
                 this.fontLoader = new FontLoader();
                 this.fontLoader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_bold.typeface.json', ( font ) => {
                     this.font = font;
-                } );
+                });
+                
+                this.inputs.forEach(input =>{
+                    input.addEventListener("input",()=>{ this.updateText(input) })
+                })
             }
             this.roomChildren[child.name]= child;
             
@@ -307,32 +311,56 @@ export default class Room {
         }
     }
 
-    updateText() {
-        var text = document.getElementById('name').value;
-        this.scene.remove(this.textMesh);
-        console.log(this.font);
-        this.createTextGeometry(this.font);
+    updateText(input) {
+        var text = this.inputs[0].value
+        this.scene.remove(this.textMesh[input.id])
+        this.createTextGeometry(this.font, input);
     }
 
-    createTextGeometry(font) {
-        console.log(document.getElementById('name').value)
-        var text = document.getElementById('name').value;
+    createTextGeometry(font, input) {
+        var text = document.getElementById(input.id).value;
+        if(input.id != 'message' && text.length > 20){
+            text = text.substring(0,20)
+            text = text.concat("...")
+        }
         var geometry = new TextGeometry(text, {
-          font: font,
-          size: 0.5,
-          height: 0.1,
-        });
-        const textMaterial = new THREE.MeshBasicMaterial( { color: 'black', transparent:true, opacity: 0.5 } );
-
-                    this.textMesh = new THREE.Mesh( geometry, textMaterial );
-                    this.textMesh.position.set( 0, 0, 0 );
-                    this.textMesh.scale.set(0.02,0.02,0)
-                    this.textMesh.rotation.x = -Math.PI/2
-                    this.textMesh.rotation.z = -Math.PI/4 - 0.1
-                    this.textMesh.position.x = 1.55
-                    this.textMesh.position.y = 0.5
-                    this.textMesh.position.z = 0.22
-        this.scene.add(this.textMesh);
+            font: font,
+            size: 0.5,
+            height: 0.1,
+          });
+          var textMaterial = new THREE.MeshBasicMaterial( { color: 'black', transparent:true, opacity: 0.5 } );
+                  this.textMesh[input.id] = new THREE.Mesh( geometry, textMaterial );
+                  this.textMesh[input.id].position.set( 0, 0, 0 );
+                  this.textMesh[input.id].scale.set(getScale(), getScale(), 0)
+                  this.textMesh[input.id].rotation.x = -Math.PI/2
+                  this.textMesh[input.id].rotation.z = -Math.PI/4 - 0.1
+                  this.textMesh[input.id].position.y = 0.5
+                  switch (input.id){
+                      case 'name':
+                          this.textMesh[input.id].position.x = 1.55
+                          this.textMesh[input.id].position.z = 0.22
+                          break;
+                      case 'email':
+                          this.textMesh[input.id].position.x = 1.54
+                          this.textMesh[input.id].position.z = 0.228
+                          break;
+                      case 'subject':
+                          this.textMesh[input.id].position.x = 1.525
+                          this.textMesh[input.id].position.z = 0.239
+                          break;
+                      case 'message':
+                          this.textMesh[input.id].position.x = 1.49
+                          this.textMesh[input.id].position.z = 0.27
+                  }
+                  console.log(this.textMesh);
+                  this.scene.add(this.textMesh[input.id]);
+        function getScale(){
+            if(text.length < 10){
+                return 0.02
+            } else {
+                return 1 / text.length / 5
+            }
+        }
       }
 
     resize() {
