@@ -239,7 +239,7 @@ export default class Room {
             }
            
         } else {
-            GSAP.to(this.ligtGlb, {intensity: 0.5})
+            GSAP.to(this.ligtGlb, {intensity: 0})
             GSAP.to(this.floor.material.color, {
                 r:0.71,
                 g:0.64,
@@ -321,6 +321,9 @@ export default class Room {
         var text = document.getElementById(input.id).value;
         if(input.id != 'message' && text.length > 20){
             text = text.substring(0,20)
+            text = text.concat("...")
+        } else if(text.length > 30) {
+            text = text.substring(0,30)
             text = text.concat("...")
         }
         var geometry = new TextGeometry(text, {
