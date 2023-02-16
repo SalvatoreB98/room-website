@@ -77,10 +77,12 @@ nav-bar{
   font-size: 1.5rem;
   padding: 0.5rem;
   background: #ffffff00;
-  background: linear-gradient(90deg, #ffffff00 69%, #e2dbc9 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(239,234,221,1) 73%);
+  width: 50%;
+  margin-left: auto;
 }
-a, button{
-  transition: all 0.2s ease-in-out;
+a, button, .lang-selection{
+  transition: all 0.1s ease-in-out;
 }
 a:hover, .lang-selection:hover{
   background-color: #0000000e;
@@ -205,43 +207,6 @@ section.about{
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
-}
-.eye{
-  border-radius: 100%;
-  position: absolute;
-  background-color: white;
-  width: 1em;
-  height: 1.2em;
-  transform: rotate(-25deg);
-}
-.eye1{
-  left: 49%;
-  top: 26%;
-}
-.eye2{
-  top: 29%;
-  left: 34%;
-}
-.pupil-container{
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.pupil{
-  position: absolute;
-  background-color: #04051d;
-  width: 0.65em;
-  height: 0.65em;
-  border-radius: 50%;
-}
-.pupil-light{
-  top: 10%;
-  left: 10%;
-  position: absolute;
-  background-color: white;
-  width: 0.3em;
-  height: 0.3em;
-  border-radius: 50%;
 }
 .profile-img > img{
   border-radius: 100%;
