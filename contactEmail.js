@@ -65,7 +65,6 @@ export default function emailService(emailjs){
                 formInputs[0].isValid = false;
             }
         } else if(e.target.id == "email"){
-            console.log(e.target.value.length)
             if(e.target.value.length < 70){
                 if(e.target.value.match(mailformat)){
                     formInputs[1].isValid = true; 
