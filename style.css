@@ -76,6 +76,8 @@ nav-bar{
   top: 0;
   font-size: 1.5rem;
   padding: 0.5rem;
+  background: #ffffff00;
+  background: linear-gradient(90deg, #ffffff00 69%, #e2dbc9 100%);
 }
 #lang-text{
   padding: 0.5rem;
@@ -95,6 +97,9 @@ nav-bar{
 }
 .nav-bar-wrapper{
   justify-content: flex-end;
+}
+.drop-shadow {
+  filter: drop-shadow(0 0 1em rgb(255, 255, 255));
 }
 button{
   border: none;
@@ -455,11 +460,10 @@ select:-webkit-autofill:focus {
   }
   nav-bar{
     padding: 0;
-    background-color: var(--gamma);
-    filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.367));
   }
   nav-bar.dark{
     background-color: var(--beta);
+    background: none;
   }
   .profile-img{
     width: 50%;

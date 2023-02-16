@@ -26,7 +26,8 @@ export default class Theme extends EventEmitter {
             document.querySelectorAll(".animated"),
             document.querySelectorAll("footer"),
             document.querySelectorAll("input"),
-            document.querySelectorAll("textarea")
+            document.querySelectorAll("textarea"),
+            document.querySelectorAll(".drop-shadow")
         );
     }
 
