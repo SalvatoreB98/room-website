@@ -110,9 +110,6 @@ a:hover, .lang-selection:hover{
 .nav-bar-wrapper{
   justify-content: flex-end;
 }
-.drop-shadow {
-  filter: drop-shadow(0 0 1em rgb(255, 255, 255));
-}
 button{
   border: none;
   width: auto;

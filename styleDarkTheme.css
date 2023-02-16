@@ -43,6 +43,3 @@ tag-lab{
     background-color: #04051dec;
   }
 }
-.drop-shadow.dark{
-  filter: drop-shadow(0 0 1em black);
-}
