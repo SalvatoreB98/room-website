@@ -18,7 +18,6 @@ export default function emailService(emailjs){
         })
         /** Validator per la checkbox del captcha */
         document.getElementById("captcha").addEventListener("change",(e)=>{
-            document.getElementById("lang-text").innerHTML = e.target.checked
             isCaptchaValid = e.target.checked;
             checkFormIsValid();
         })
