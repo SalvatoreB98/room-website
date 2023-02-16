@@ -9,6 +9,7 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 export default class Room {
     static instance;
     constructor(canvas) {
+        
         this.experience = new Experience();
         this.scene = this.experience.scene;
         this.renderer = this.experience.renderer;
@@ -336,7 +337,7 @@ export default class Room {
                   this.textMesh[input.id].position.set( 0, 0, 0 );
                   this.textMesh[input.id].scale.set(getScale(), getScale(), 0)
                   this.textMesh[input.id].rotation.x = -Math.PI/2
-                  this.textMesh[input.id].rotation.z = -Math.PI/4 - 0.1
+                  this.textMesh[input.id].rotation.z = -Math.PI/4 - 0.13
                   this.textMesh[input.id].position.y = 0.5
                   switch (input.id){
                       case 'name':
