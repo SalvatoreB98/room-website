@@ -16,7 +16,7 @@ nav-bar.dark{
   color: var(--gamma);
   background: none;
 }
-nav-bar.dark button{
+nav-bar.dark button, nav-bar.dark a {
   color: var(--gamma);
 }
 .dark.profile-img > img{
