@@ -8,12 +8,15 @@ import music6 from "../../src/sounds/music6.wav"
 import Controls from "../World/Controls";
 export default class Music{
     constructor(){
+        this.isAudioEnabled = false;
+        this.audioToggle = document.querySelector(".audio-toggle");
+        this.volumeIcon = document.getElementById("volume-icon")
+        this.audioToggle.addEventListener("click",(e)=>{this.onVolumeClick()})
         this.scrollTop;
         this.experience = new Experience();
         this.sizes = this.experience.sizes;
         this.world = this.experience.world;
         this.page = document.querySelector(".page");
-        this.isMusicPlaying = false;
         this.instruments = {
             kick: new Audio(music1),
             kasio: new Audio(music2),
@@ -22,45 +25,45 @@ export default class Music{
             bass2: new Audio(music5),
             chord: new Audio(music6),
         }
-        document.addEventListener("click", () => {
-            this.playMusic();
-        });
         window.addEventListener("scroll",()=>{
             this.changepx = this.page.clientHeight / 12;
             this.scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
             var scrolled = this.scrollTop / this.changepx;
             if(scrolled > 0 && scrolled < 1){
                 // PRIMO STEP AUDIO
-                this.instrumentsToPlay(["kasio"])
+                this.instrumentsToPlay(["kasio","bass"])
             } else if(scrolled > 1  && scrolled < 2){
                 // SECONDO STEP AUDIO
-                this.instrumentsToPlay(["kasio","perc"])
+                this.pitchDown(0.5);
+                this.instrumentsToPlay(["kasio",,"bass","perc"])
+                
             } else if(scrolled > 2  && scrolled < 3){
                 // TERZO STEP AUDIO
-                this.instrumentsToPlay(["kasio","perc", "kick"])
+                this.pitchDown(0.7);
+                this.instrumentsToPlay(["kasio","perc", "kick", "bass"])
             } else if(scrolled > 3  && scrolled < 4){
                 // QUARTO STEP AUDIO
+                this.pitchDown(0.8);
                 this.instrumentsToPlay(["kasio","perc", "kick", "bass"])
             } else if(scrolled > 4  && scrolled < 5){
                 //QUINTO STEP AUDIO
+                this.pitchDown(0.9);
                 this.instrumentsToPlay(["kasio","perc", "kick", "bass", "chord"])
             } else if(scrolled > 5){
                 // SESTO STEP AUDIO
-                this.instrumentsToPlay(["kasio","perc", "kick", "bass", "chord", "bass2"])
+                this.pitchDown(1);
+                this.instrumentsToPlay(["kasio","perc", "kick", "bass", "chord"])
             }
         })
     }
     playMusic(){
-        if(!this.isMusicPlaying){
-            for (const [key, audio] of Object.entries(this.instruments)) {
-                audio.play();
-                audio.loop = true;
-                audio.volume = 0;
-                if(key == "kasio"){
-                    audio.volume = 1
-                }
+        for (const [key, audio] of Object.entries(this.instruments)) {
+            audio.play();
+            audio.loop = true;
+            audio.volume = 0;
+            if(key == "kasio"){
+                audio.volume = 1
             }
-            this.isMusicPlaying = true;
         }
     }
     instrumentsToPlay(intrumentKeys){
@@ -70,6 +73,31 @@ export default class Music{
             } else{
                 audio.volume = 0
             }
+        }
+    }
+    onVolumeClick(){
+        if(!this.isAudioEnabled){
+            this.playMusic();
+            console.log("PLAY")
+            this.isAudioEnabled = true;
+            this.volumeIcon.classList = ["fa fa-volume-up"]
+        } else {
+            this.stopMusic();
+            console.log("STOP!")
+            this.isAudioEnabled = false;
+            this.volumeIcon.classList = ["fa fa-volume-off"]
+        }
+    }
+    stopMusic(){
+        for (const [key, audio] of Object.entries(this.instruments)) {
+            audio.pause();
+        }
+    }
+    pitchDown(pitch){
+        for (const [key, audio] of Object.entries(this.instruments)) {
+            audio.mozPreservesPitch = true;
+            audio.playbackRate = pitch;
+            audio.play();
         }
     }
 }
