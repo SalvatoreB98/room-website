@@ -97,7 +97,6 @@ export default class Music{
         for (const [key, audio] of Object.entries(this.instruments)) {
             audio.mozPreservesPitch = true;
             audio.playbackRate = pitch;
-            audio.play();
         }
     }
 }
