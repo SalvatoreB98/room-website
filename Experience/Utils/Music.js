@@ -31,27 +31,21 @@ export default class Music{
             var scrolled = this.scrollTop / this.changepx;
             if(scrolled > 0 && scrolled < 1){
                 // PRIMO STEP AUDIO
-                console.log("step1")
                 this.instrumentsToPlay(["kasio"])
             } else if(scrolled > 1  && scrolled < 2){
                 // SECONDO STEP AUDIO
-                console.log("step2")
                 this.instrumentsToPlay(["kasio","perc"])
             } else if(scrolled > 2  && scrolled < 3){
                 // TERZO STEP AUDIO
-                console.log("step3")
                 this.instrumentsToPlay(["kasio","perc", "kick"])
             } else if(scrolled > 3  && scrolled < 4){
                 // QUARTO STEP AUDIO
-                console.log("step4")
                 this.instrumentsToPlay(["kasio","perc", "kick", "bass"])
             } else if(scrolled > 4  && scrolled < 5){
                 //QUINTO STEP AUDIO
-                console.log("step5")
                 this.instrumentsToPlay(["kasio","perc", "kick", "bass", "chord"])
             } else if(scrolled > 5){
                 // SESTO STEP AUDIO
-                console.log("step6")
                 this.instrumentsToPlay(["kasio","perc", "kick", "bass", "chord", "bass2"])
             }
         })
