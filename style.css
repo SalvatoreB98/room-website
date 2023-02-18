@@ -331,22 +331,6 @@ footer > p{
 footer > .d-flex{
   align-items: flex-start;
 }
-.audio-toggle{
-  z-index: 99;
-  width: 75px;
-  height: 75px;
-  position: fixed;
-  background-color: var(--delta);
-  border-radius: 50%;
-  font-size: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: drop-shadow(5px 5px 10px #0000005c);
-  bottom: 5%;
-  right: 5%;
-  cursor: pointer;
-}
 /**FORM */
 input, textarea{
   width: 100%;
