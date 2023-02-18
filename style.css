@@ -478,6 +478,7 @@ select:-webkit-autofill:focus {
   }
   nav-bar{
     padding: 0;
+    width: 100%;
   }
   nav-bar.dark{
     background-color: var(--beta);
