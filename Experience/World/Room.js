@@ -39,6 +39,7 @@ export default class Room extends EventEmitter{
         this.textMesh = [];
         this.clips = this.room.animations;
         this.raycaster = new THREE.Raycaster();
+        this.hoverExclude = ['about','side-wrapper']
         this.renderer.domElement.addEventListener('click', this.onClick.bind(this), false);
         this.mouse = new THREE.Vector2();
         this.particles;
@@ -207,11 +208,9 @@ export default class Room extends EventEmitter{
             var raycaster = new THREE.Raycaster();
             raycaster.setFromCamera( mouse, this.camera.orthographicCamera );
             var intersects = raycaster.intersectObject(this.ball);
-
-            if(intersects.length > 0) {
+            document.body.style.cursor = 'default'
+            if(intersects.length > 0 && (e.target.classList[0] == "hero-section" || e.target.classList[0] == "page" || e.target.classList[0] == "separator")) {
                document.body.style.cursor = 'pointer'
-            } else {
-                document.body.style.cursor = 'default'
             }
         })
     }
