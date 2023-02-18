@@ -119,15 +119,9 @@ export default class Room extends EventEmitter{
 
 
             if(child.name.startsWith("Screen")){
-                child.material = new THREE.MeshPhysicalMaterial({
-                    color: 'black',
-                    roughness: 0.1
+                child.material = new THREE.MeshBasicMaterial({
+                    map:this.resources.items.screen
                 })
-                if(child.name == "Screen"){
-                    child.material = new THREE.MeshBasicMaterial({
-                        map:this.resources.items.screen
-                    })
-                }
             }
             if(child.material && child.material.name == "book"){
                 child.material = new THREE.MeshPhysicalMaterial({

@@ -300,16 +300,9 @@ tag-lab{
   align-items: center;
   padding: 4em 0px;
   margin: 2em 0em;
-  transition: all;
-}
-.skill:hover p{
-  height: 100px;
 }
 .skill p{
   font-size: larger;
-  height: 0;
-  overflow: hidden;
-  transition: all 0.1s ease-in-out;
 }
 .skill-icon{
   width: 5vw ;

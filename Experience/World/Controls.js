@@ -59,12 +59,12 @@ export default class Controls {
                     }
                 });
                 this.firstMoveTimeline.to(this.camera.orthographicCamera,{
-                    zoom: 2.7
+                    zoom: 3.5
                 })
                 this.firstMoveTimelinePosition.to(this.camera.orthographicCamera.position,{
-                    x: 0.7,
+                    x: 0.9,
                     y: 1.4,
-                    z: 1.5
+                    z: 1.6
                 })
 
             },
@@ -83,7 +83,8 @@ export default class Controls {
                     scrollTrigger: {
                         trigger: ".first-move-mobile",
                         start: "top top",
-                        markers: false,                        end: "50px -500px",
+                        markers: false,                       
+                        end: "50px -500px",
                         scrub: 0.6,
                         invalidateOnRefresh: true
                     }
@@ -117,7 +118,46 @@ export default class Controls {
                     y:0.9,
                     z:0.9
                 });
-                
+
+                this.educationTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".education",
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                        markers: false,
+                        onComplete: () => ScrollTrigger.refresh()
+                    }
+                }).to(this.camera.orthographicCamera.position,{
+                    x: 1.5,
+                    y: 1.5,
+                    z: 0.5
+                },0).to(this.camera.orthographicCamera,{
+                    zoom: 5
+                },0)
+
+                this.skillsTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".skills",
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                        markers: false,
+                        onComplete: () => ScrollTrigger.refresh()
+                    }
+                }).to(this.camera.orthographicCamera.position,{
+                    x: 1,
+                    y: 1,
+                    z: 0.5
+                },0).to(this.camera.orthographicCamera,{
+                    zoom: 4.5
+                },0)
+                // .to(this.camera.orthographicCamera.rotation,{
+                //     x: -Math.PI/4
+                // },0)
+
                 this.contactTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".pre-contacts",
