@@ -53,10 +53,6 @@ export default class Room extends EventEmitter{
             this.bounce.setLoop(THREE.LoopOnce);
             this.bounce.clampWhenFinished = true;
             this.bounce.enable = true;
-            this.actionSpeaker = this.mixerSpeaker.clipAction( this.clips[4] );
-            // this.actionSpeaker.setLoop(THREE.LoopOnce);
-            this.actionSpeaker.clampWhenFinished = true;
-            this.actionSpeaker.enable = true;
             this.experience.sound = false;
             this.action1.play();
             this.action2.play();
@@ -119,9 +115,11 @@ export default class Room extends EventEmitter{
 
 
             if(child.name.startsWith("Screen")){
+              
                 child.material = new THREE.MeshBasicMaterial({
                     map:this.resources.items.screen
                 })
+                console.log("SCREEN:", child.material.map)
             }
             if(child.material && child.material.name == "book"){
                 child.material = new THREE.MeshPhysicalMaterial({
@@ -294,25 +292,12 @@ export default class Room extends EventEmitter{
         if (intersects.length > 0) {
             console.log(intersects[0].object.name)
             var object = intersects[0].object;
-            if(object.name.startsWith('Icosphere')){
+            if(object.name.startsWith('ball')){
                 this.bounce.stop();
                 this.bounce.play();
                 this.ball == object;
             }
 
-            if(object.name.startsWith('resiver') || object.name.startsWith('Circle004')){
-                this.actionSpeaker.stop();
-                this.actionSpeaker.play();
-                if(this.experience.sound){
-                    this.actionSpeaker.setLoop(THREE.LoopOnce);
-                    this.music.playMusic();
-                } else {
-                    this.actionSpeaker.setLoop(THREE.LoopPingPong);
-                    this.music.stopMusic();
-                }
-                this.emit("sound", !this.experience.sound)
-
-            }
 
 
         }
