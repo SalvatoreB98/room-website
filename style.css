@@ -297,12 +297,19 @@ tag-lab{
 }
 .skill{
   display: flex;
+  align-items: center;
   padding: 4em 0px;
   margin: 2em 0em;
+  transition: all;
 }
-
+.skill:hover p{
+  height: 100px;
+}
 .skill p{
   font-size: larger;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
 }
 .skill-icon{
   width: 5vw ;
@@ -464,6 +471,19 @@ select:-webkit-autofill:focus {
   }
   h1>p{
     font-size: 1.9vh;
+  }
+  .skill p{
+    height: auto;
+    display: block;
+  }
+  .skill:hover p{
+    height: auto;
+    display: block;
+  }
+  .skill p{
+    font-size: larger;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
   }
   .about-wrapper{
     flex-direction: column-reverse;

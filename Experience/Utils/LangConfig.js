@@ -40,8 +40,19 @@ export const translations = {
         contactsFooter: "Contatti",
         links: "Link utili",
         gdpr: "Autorizzo il trattamento dei dati personali contenuti in questa pagina secondo l' art. 13 GDPR 679/16",
-        downloadCv: " Puoi scaricare il mio cv <a target='_blank' href='/sbcvit.pdf' download>qui</a>"
+        downloadCv: " Puoi scaricare il mio cv <a target='_blank' href='/sbcvit.pdf' download>qui</a>",
 
+        javascriptDesc: "Ho ampiamente utilizzato javascript durante il Boolean Trainee e durante la fase di sviluppo dei miei progetti personali. Ho sviluppato conoscenze intermedie su questo meraviglioso linguaggio di programmazione",
+        bootstrapDesc: "Bootstrap è un grande miglioramento in termini di manutenibilità del codice e tempo di sviluppo. Ho utilizzato questo framework CSS in diversi progetti in NTT e durante il Boolean Trainee",
+        htmlDesc: "Posso costruire codice HTML semantico grazie alla mia esperienza. Ho imparato questa abilità durante questi anni come sviluppatore front-end",
+        cssDesc: "Adoro personalizzare e stilizzare siti web con la magia del CSS",
+        javaDesc: "Java è il linguaggio di programmazione grazie al quale ho imparato l'OOP. Durante il mio periodo in NTT DATA ho sviluppato alcuni microservizi SOAP con JAVA per un software che gestisce i magazzini Carrefour.",
+        angularDesc: " Ho sviluppato buone conoscenze angular lavorando in NTT DATA su progetti che utilizzano questa tecnologia ",
+        typescriptDesc: "Questa abilità è strettamente correlata ad angular e non è stato un problema per me passare da javascript a dattiloscritto",
+        scssDesc: "Mi sono avvicinato a questo prepocessore durante Boolean e penso che sia uno strumento potente. I progetti NTT su cui ho lavorato ne fanno uso.",
+        blenderDesc: "Sono sempre stato appassionato di CGI e grafica 3D e ho ottenuto un buon livello di abilità come autodidatta grazie a molta pratica, tutorial e documentazione in parallelo con i miei studi di Comunicazione",
+        threeDesc: "Recentemente sono entrato in questo meraviglioso mondo che sto ancora imparando durante i fine settimana e le vacanze",
+        gitDesc: "Uso GIT ogni giorno per registrare le modifiche apportate ai progetti su cui lavoro quindi consentendo ai miei team di farvi riferimento secondo necessità."
     },
     en: {
         name: "SALVATORE <br> BUTERA",
@@ -85,7 +96,20 @@ export const translations = {
         contactsFooter: "Contacts",
         links: "Links",
         gdpr: "I authorize the processing of personal data contained in my curriculum vitae based on art. 13 GDPR 679/16",
-        downloadCv: "You can download my CV  <a target='_blank' href='/sbcvit.pdf' download>here</a>"
+        downloadCv: "You can download my CV  <a target='_blank' href='/sbcvit.pdf' download>here</a>",
+
+        javascriptDesc: "I largely used javascript during the Boolean Trainee and during the developing phase of my personal projects. I developed intermediate knowledge about this wonderful programming language",
+        bootstrapDesc: "Bootstrap is a great improvement in terms of code manutenibility and development time. I used this CSS framework in several project in NTT and during the Boolean Trainee",
+        htmlDesc: "I can build semantic HTML code thanks to my experience. I mastered this skill during these years as front-end developer",
+        cssDesc: "What kind of front-end developer would I be if i did not know CSS? I love customize and stylize websites and projects with good CSS lines",
+        javaDesc: "Java is the programming language thanks to wich i learned OOP. During my period in NTT DATA I developed some SOAP micro-services with JAVA for a software that manage Carrefour warehouses.",
+        angularDesc: " I developed this skill working in NTT DATA on numerous projects",
+        typescriptDesc: "This skill is closely related to angular and it hasn't been a problem for me switching from javascript to typescript",
+        scssDesc: "I approached this prepocessor during Boolean and I think that is a powerful tool. The NTT projects that I worked on make use of it.",
+        blenderDesc: "I have been always passionate about CGI and 3D graphics and I obtained a good skilled level as a self-thought thanks to a lot of practice, tutorials and documentation in parallel with my Communication studies",
+        threeDesc: "Recently I entered this wonderful world that I am still learning during weekends and holidays",
+        gitDesc: "I use GIT every day to record the changes made to a project, storing those changes, then allowing my teams to reference them as needed.",
     }
 }
 {/* <span class=\"clock\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span> */}
+        

@@ -5,12 +5,16 @@ import moment from 'moment'
 import {RectAreaLightHelper} from 'three/examples/jsm/helpers/RectAreaLightHelper'
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { PlaneGeometry } from "three";
+import { EventEmitter } from 'events';
 
-export default class Room {
+export default class Room extends EventEmitter{
     static instance;
     constructor(canvas) {
-        
+        super();
         this.experience = new Experience();
+        this.music = this.experience.music;
+        console.log(this.experience)
         this.scene = this.experience.scene;
         this.renderer = this.experience.renderer;
         this.resources = this.experience.resources;
@@ -31,27 +35,32 @@ export default class Room {
         this.mixerM = new THREE.AnimationMixer( this.room.scene );
         this.mixerH = new THREE.AnimationMixer( this.room.scene );
         this.mixerBall = new THREE.AnimationMixer( this.room.scene );
+        this.mixerSpeaker = new THREE.AnimationMixer( this.room.scene );
         this.textMesh = [];
         this.clips = this.room.animations;
         this.raycaster = new THREE.Raycaster();
         this.renderer.domElement.addEventListener('click', this.onClick.bind(this), false);
         this.mouse = new THREE.Vector2();
-
+        this.particles;
+        
         if(this.clips.length>0){
+            console.log(this.clips)
             this.action1 = this.mixerS.clipAction( this.clips[3] );
             this.action2 = this.mixerM.clipAction( this.clips[2] );
             this.action3 = this.mixerH.clipAction( this.clips[1] );
-           
             this.bounce = this.mixerBall.clipAction( this.clips[0] );
             this.bounce.setLoop(THREE.LoopOnce);
             this.bounce.clampWhenFinished = true;
             this.bounce.enable = true;
-
+            this.actionSpeaker = this.mixerSpeaker.clipAction( this.clips[4] );
+            // this.actionSpeaker.setLoop(THREE.LoopOnce);
+            this.actionSpeaker.clampWhenFinished = true;
+            this.actionSpeaker.enable = true;
+            this.experience.sound = false;
             this.action1.play();
             this.action2.play();
             this.action3.play();
-        }
-
+        }         
 
         this.myTime();
         this.setModel();
@@ -74,6 +83,7 @@ export default class Room {
                 
             }
         });
+        
     }
     setModel(){
 
@@ -161,9 +171,8 @@ export default class Room {
                     input.addEventListener("input",()=>{ this.updateText(input) })
                 })
             }
-            this.roomChildren[child.name]= child;
-            
-            
+
+            this.roomChildren[child.name] = child;     
         });
 
         const intensity = 0;
@@ -197,7 +206,7 @@ export default class Room {
 
             var raycaster = new THREE.Raycaster();
             raycaster.setFromCamera( mouse, this.camera.orthographicCamera );
-            var intersects = raycaster.intersectObject( this.ball );
+            var intersects = raycaster.intersectObject(this.ball);
 
             if(intersects.length > 0) {
                document.body.style.cursor = 'pointer'
@@ -290,12 +299,26 @@ export default class Room {
         var intersects = this.raycaster.intersectObject(this.scene, true);
 
         if (intersects.length > 0) {
-            
+            console.log(intersects[0].object.name)
             var object = intersects[0].object;
             if(object.name.startsWith('Icosphere')){
                 this.bounce.stop();
                 this.bounce.play();
                 this.ball == object;
+            }
+
+            if(object.name.startsWith('resiver') || object.name.startsWith('Circle004')){
+                this.actionSpeaker.stop();
+                this.actionSpeaker.play();
+                if(this.experience.sound){
+                    this.actionSpeaker.setLoop(THREE.LoopOnce);
+                    this.music.playMusic();
+                } else {
+                    this.actionSpeaker.setLoop(THREE.LoopPingPong);
+                    this.music.stopMusic();
+                }
+                this.emit("sound", !this.experience.sound)
+
             }
 
 
@@ -365,7 +388,7 @@ export default class Room {
                 return 1 / text.length / 5
             }
         }
-      }
+    }
 
     resize() {
 
@@ -374,7 +397,8 @@ export default class Room {
     update() {
         let delta = this.clock.getDelta(); 
         this.mixerS.update(delta/5);
-        this.mixerBall.update(delta*1.5)
+        this.mixerBall.update(delta*1.5);
+        this.mixerSpeaker.update(delta);
     }
 
 }
