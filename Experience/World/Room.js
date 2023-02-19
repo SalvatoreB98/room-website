@@ -147,7 +147,9 @@ export default class Room extends EventEmitter{
                 // Add the area light to the scene
                 var areaLightHelper = new RectAreaLightHelper(areaLight);
                 // this.scene.add(areaLightHelper);
-                this.scene.add(areaLight);
+                this.actualRoom.add(areaLight);
+                console.log(child);
+                console.log(this.actualRoom)
                 this.inputs = [
                     document.getElementById("name"),
                     document.getElementById("email"),
@@ -193,6 +195,11 @@ export default class Room extends EventEmitter{
     }
     onMouseMove(){
         window.addEventListener("mousemove", (e)=>{
+
+            this.rotation = (e.clientX - window.innerWidth / 2) * 2 / window.innerWidth * 2;
+            this.lerp.target = this.rotation*0.1;
+
+
             var mouse = new THREE.Vector2();
             mouse.x = ( e.clientX / window.innerWidth ) * 2 - 1;
             mouse.y = - ( e.clientY / window.innerHeight ) * 2 + 1;
@@ -315,7 +322,7 @@ export default class Room extends EventEmitter{
 
     updateText(input) {
         var text = this.inputs[0].value
-        this.scene.remove(this.textMesh[input.id])
+        this.actualRoom.remove(this.textMesh[input.id])
         this.createTextGeometry(this.font, input);
     }
 
@@ -358,7 +365,7 @@ export default class Room extends EventEmitter{
                           this.textMesh[input.id].position.z = 0.27
                   }
                   console.log(this.textMesh);
-                  this.scene.add(this.textMesh[input.id]);
+                  this.actualRoom.add(this.textMesh[input.id]);
         function getScale(){
             if(text.length < 10){
                 return 0.02
@@ -377,6 +384,13 @@ export default class Room extends EventEmitter{
         this.mixerS.update(delta/5);
         this.mixerBall.update(delta*1.5);
         this.mixerSpeaker.update(delta);
+
+        this.lerp.current = GSAP.utils.interpolate(
+            this.lerp.current,
+            this.lerp.target,
+            this.lerp.ease
+        );  
+        this.actualRoom.rotation.y = this.lerp.current
     }
 
 }
