@@ -303,11 +303,12 @@ tag-lab{
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 4em 0px;
+  padding: 2em 0px;
   margin: 2em 0em;
   position: relative;
 }
 .skill p{
+  width: 100%;
   opacity: 0;
   z-index: 99;
   display: flex;
