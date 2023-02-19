@@ -2,9 +2,28 @@ import Experience from "../Experience.js";
 import * as THREE from 'three';
 import GSAP from 'gsap';
 import { ScrollTrigger } from "gsap/all";
+import Stats from 'https://cdnjs.cloudflare.com/ajax/libs/stats.js/17/Stats.js'
+
 export default class Controls {
     static instance;
     constructor(canvas) {
+        var stats = new Stats();
+        stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+        document.body.appendChild( stats.dom );
+
+        function animate() {
+
+          stats.begin();
+
+          // monitored code goes here
+
+          stats.end();
+
+          requestAnimationFrame( animate );
+
+        }
+
+        requestAnimationFrame( animate );
         this.scrollTop;
         this.experience = new Experience();
         this.scene = this.experience.scene;
