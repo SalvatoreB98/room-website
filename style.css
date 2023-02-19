@@ -315,14 +315,15 @@ tag-lab{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   font-size: larger;
   transition: all 0.2s ease-in-out;
+  padding: 2em;
 }
 .skill:hover p{
   opacity: 0.9;
-  padding: 2em;
   border-radius: 3em;
+  transform: translate(-50%, -50%) scale(1);
 }
 .skill-icon{
   width: 5vw ;
