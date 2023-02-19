@@ -14,7 +14,6 @@ export default class Room extends EventEmitter{
         super();
         this.experience = new Experience();
         this.music = this.experience.music;
-        console.log(this.experience)
         this.scene = this.experience.scene;
         this.renderer = this.experience.renderer;
         this.resources = this.experience.resources;
@@ -45,7 +44,6 @@ export default class Room extends EventEmitter{
         this.particles;
         
         if(this.clips.length>0){
-            console.log(this.clips)
             this.action1 = this.mixerS.clipAction( this.clips[3] );
             this.action2 = this.mixerM.clipAction( this.clips[2] );
             this.action3 = this.mixerH.clipAction( this.clips[1] );
@@ -98,7 +96,6 @@ export default class Room extends EventEmitter{
                     child2.castShadow = true;
                     child2.receiveShadow = true;
                     if(child2.material && child2.material.name.startsWith("book")){
-                        console.log(child2)
                         child2.material = new THREE.MeshStandardMaterial({
                             color: this.getRandomColor()
                         })
@@ -149,8 +146,6 @@ export default class Room extends EventEmitter{
                 var areaLightHelper = new RectAreaLightHelper(areaLight);
                 // this.scene.add(areaLightHelper);
                 this.actualRoom.add(areaLight);
-                console.log(child);
-                console.log(this.actualRoom)
                 this.inputs = [
                     document.getElementById("name"),
                     document.getElementById("email"),
@@ -273,7 +268,6 @@ export default class Room extends EventEmitter{
         const h = parseInt(this.moment.format('hh'));
         const m = parseInt(this.moment.format('mm'));
         const s = parseInt(this.moment.format('ss'));
-        console.log(h,m,s)
         this.mixerM.setTime(m * 2.5 / 60);
         this.mixerH.setTime(h/12 + m / (720 - 150));
         setInterval(()=>{
@@ -281,7 +275,6 @@ export default class Room extends EventEmitter{
             const h = parseInt(this.moment.format('hh'));
             const m = parseInt(this.moment.format('mm'));
             const s = parseInt(this.moment.format('ss'));
-            console.log(h,m,s)
             this.mixerM.setTime(m * 2.5 / 60);
             this.mixerH.setTime(h/12);
         },30*1000)
@@ -298,7 +291,6 @@ export default class Room extends EventEmitter{
         var intersects = this.raycaster.intersectObject(this.scene, true);
 
         if (intersects.length > 0) {
-            console.log(intersects[0].object.name)
             var object = intersects[0].object;
             if(object.name.startsWith('ball')){
                 this.bounce.stop();
@@ -365,7 +357,6 @@ export default class Room extends EventEmitter{
                           this.textMesh[input.id].position.x = 1.49
                           this.textMesh[input.id].position.z = 0.27
                   }
-                  console.log(this.textMesh);
                   this.actualRoom.add(this.textMesh[input.id]);
         function getScale(){
             if(text.length < 10){

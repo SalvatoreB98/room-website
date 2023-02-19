@@ -35,6 +35,5 @@ export default class Preloader extends EventEmitter{
     setAssets(){
         this.room = this.experience.world.room.actualRoom;
         this.roomChildren = this.experience.world.room.roomChildren;
-        console.log(this.roomChildren)
     }
 }

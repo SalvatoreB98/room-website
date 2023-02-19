@@ -68,7 +68,6 @@ export default class Environment {
         this.gui.addColor(this.obj, "colorObj").onChange(() => {
             this.sunlight.color.copy(this.obj.colorObj);
             this.ambientLight.color.copy(this.obj.colorObj);
-            console.log(this.obj.colorObj);
         });
         this.gui.add(this.obj, "intensity", 0, 10).onChange(() => {
             this.sunlight.intensity = this.obj.intensity;
