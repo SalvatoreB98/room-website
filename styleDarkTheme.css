@@ -26,6 +26,9 @@ nav-bar.dark button, nav-bar.dark a {
 .date.dark{
   background-color: var(--theta);
 }
+.skill p.dark{
+  background-color: var(--theta);
+}
 tag-lab.dark{
   background-color: rgba(151, 151, 215, 0.469);
   font-weight: normal;

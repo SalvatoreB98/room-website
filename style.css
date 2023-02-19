@@ -295,21 +295,40 @@ tag-lab{
 .separator{
   height: 75vh;
 }
+.skills-wrapper{
+  display: flex;
+  flex-direction: row;
+}
 .skill{
+  width: 50%;
   display: flex;
   align-items: center;
   padding: 4em 0px;
   margin: 2em 0em;
+  position: relative;
 }
 .skill p{
+  opacity: 0;
+  z-index: 99;
+  display: flex;
+  background-color: var(--delta);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: larger;
+  transition: all 0.2s ease-in-out;
+}
+.skill:hover p{
+  opacity: 0.9;
+  padding: 2em;
+  border-radius: 3em;
 }
 .skill-icon{
   width: 5vw ;
   height: auto;
   height: auto;
   margin: 2em 2em;
-  border-radius: 100%;
 }
 .skill h4{
   font-weight: 700;

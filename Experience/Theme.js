@@ -27,6 +27,7 @@ export default class Theme extends EventEmitter {
             document.querySelectorAll("footer"),
             document.querySelectorAll("input"),
             document.querySelectorAll("textarea"),
+            document.querySelectorAll(".skill p"),
         );
     }
 
