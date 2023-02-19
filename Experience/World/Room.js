@@ -97,7 +97,8 @@ export default class Room extends EventEmitter{
                 child.children.forEach((child2)=>{
                     child2.castShadow = true;
                     child2.receiveShadow = true;
-                    if(child2.material && child2.material.name == "book"){
+                    if(child2.material && child2.material.name.startsWith("book")){
+                        console.log(child2)
                         child2.material = new THREE.MeshStandardMaterial({
                             color: this.getRandomColor()
                         })
