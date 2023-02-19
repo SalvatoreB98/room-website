@@ -35,7 +35,8 @@ export default class Renderer {
         var gpuName = this.getGPU()
         console.log(gpuName)
         // gpuName.toLowerCase().includes("intel") AGGIUNGERE CONDIZIONE PER OTTIMIZZARE
-        if(this.isMobile){
+        if(this.isMobile || gpuName.toLowerCase().includes("intel")){
+            this.renderer.antialias = false
             this.renderer.setPixelRatio(this.sizes.pixelRatio*0.5); 
         } else {
             this.renderer.setPixelRatio(this.sizes.pixelRatio); 
