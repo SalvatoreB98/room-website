@@ -64,7 +64,7 @@ export default function emailService(emailjs){
                 formInputs[0].isValid = false;
             }
         } else if(e.target.id == "email"){
-            if(e.target.value.length < 25){
+            if(e.target.value.length < 50){
                 if(e.target.value.match(mailformat)){
                     formInputs[1].isValid = true; 
                 }else {
@@ -101,6 +101,7 @@ export default function emailService(emailjs){
         } else {
             document.querySelector("[type=submit").disabled = true;
         }
+        console.log(formInputs)
         checkFormIsValid();
     }
 
