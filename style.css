@@ -58,6 +58,9 @@ section.about.introduction{
   width: 100%;
   height: 100%;
 }
+.preview{
+  display: none;
+}
 
 /** PAGE */
 .page{
